@@ -56,7 +56,15 @@ export default function Sale() {
             <div className='flex flex-row justify-center items-center'>
               <img src={logo} className='w-60 h-16 ml-5' />
               <div className='flex flex-col mr-10 ml-4'>
-                <div className='flex flex-row my-2'>
+                <div className='flex flex-row my-2 space-x-2'>
+              <h1>Bill No.</h1>
+                <CustomInput
+                height={35}
+                 />
+                <CustomInput 
+                   height={35}
+                />
+                <h2 >Date & Time</h2>
                 <CustomInput
                 height={35}
                  />
