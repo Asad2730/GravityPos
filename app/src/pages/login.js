@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from "react";
 import CustomButton from "../components/ui/button";
 import CustomInput from "../components/ui/input";
 import CustomText from "../components/ui/text";
 import { useNavigate } from "react-router-dom";
-import { login } from "../DB/loginDb";
+ import { login } from "../DB/loginDb";
 
 
 export default function Login() {
@@ -14,14 +14,19 @@ export default function Login() {
    name:'',
    password:'',
   });
-  
+
+
   const submit = async()=>{
     const isFormValid = formValues.name !== '' && formValues.password !== '';
     if(isFormValid){
        try{
-        const rows = await login(formValues.name,formValues.password);
-        console.log('rows',rows);
+       let user = await login(formValues.name,formValues.password);  
+       if(user){
         navigate('/sale')
+       }else{
+        console.log('user not fond')
+       }
+      
        }catch(error){
         console.log(error)
        }
@@ -32,22 +37,20 @@ export default function Login() {
       <>
         <div className="flex min-h-screen flex-1">
         <div className="flex flex-1 w-1/2 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-          <div className="mx-auto w-full max-w-sm lg:w-96">
+          <div className="mx-auto w-full max-w-sm lg:w-96 bg-bloac">
             <div>
+              <center>
               <img
                 className="h-10 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 alt="Your Company"
               />
-              <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                Sign in to your account
-              </h2>
-        
+              </center>
             </div>
 
             <div className="mt-10">
               <div>
-                <form  className="space-y-6">
+                <div  className="space-y-6 ">
                   <div>
                     <CustomText label={'User Name'}/>
                     <div className="mt-2">
@@ -82,7 +85,7 @@ export default function Login() {
                      onClick={submit}
                    />
                   </div>
-                </form>
+                </div>
               </div>
 
             </div>

@@ -27,6 +27,7 @@ const tr = [
     code: '4', ProductName: 'lindsay.walton@example.com', bonus: 'Member',
     qty: '1', batch: '111', expiry: '07/06/2023', d: 'element', disc: '10', price: '100', amount: '90'
   },
+ 
 ]
 
 const th = [
@@ -65,7 +66,7 @@ export default function Sale() {
                 
                 </div>
                 <div className='flex flex-row '>
-                  <span className='m-3'>Client Type</span>
+                  <span className='m-3 '>Client Type</span>
                   <CustomDropDown />
                   <span className='m-3'>Client Name</span>
                   <CustomInput 

@@ -1,14 +1,13 @@
-import db from '../DB/connect';
+import db from './connect'
 
-export const login = (name, password) => {
-  return new Promise((resolve, reject) => {
-    const query = `SELECT * FROM User WHERE name = ? AND password = ?`;
-    db.all(query, [name, password], (err, rows) => {
-      if (err) {
-        reject(err.message);
-      } else {
-        resolve(rows);
-      }
-    });
-  });
-};
+
+export const login = async (name,password)=>{
+    try{
+     const user = await db.users.where({name,password}).first();
+     return user;
+    }catch(ex){
+        return ex;
+    }
+}
+
+

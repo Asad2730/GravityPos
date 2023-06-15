@@ -14,10 +14,10 @@ const Td = ({value})=>(
 )
 
   return (
-    <>
+    <div className='h-52'> 
         <table 
-           className="min-w-full divide-y overflow-y-auto h-60 bg-white">
-                <thead>
+           className="min-w-full divide-y   bg-white">
+                <thead className='sticky top-0'>
                   <tr className="divide-x divide-gray-200">
                    {
                     tableheaders.map((i)=>(
@@ -34,7 +34,7 @@ const Td = ({value})=>(
                    }           
                   </tr>
                 </thead>
-                <tbody  className="divide-y divide-gray-200 bg-white">
+                <tbody  className="divide-y divide-gray-200 h-24 S bg-white overflow-y-auto ">
                   {tableRows.map((i) => (
                     <tr 
                      key={i.code} className="divide-x divide-gray-200">
@@ -56,7 +56,7 @@ const Td = ({value})=>(
                   ))}
                 </tbody>
               </table>
-    </>
+    </div>
   )
 }
 
