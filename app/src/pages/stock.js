@@ -4,9 +4,10 @@ import CustomInput from '../components/ui/input';
 import { secondary_color } from '../utils/colors';
 import CustomDropDown from '../components/ui/dropDown';
 import SideNav from '../components/navbar/sideNavBar';
-import { sale_navigation_items } from '../components/navbar/navBarItems';
+import { stock_navigation_items } from '../components/navbar/navBarItems';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+
 
 
 
@@ -45,33 +46,32 @@ const th = [
 
 
 
-export default function Sale() {
+export default function Stock() {
 
   
-  const [currentTime, setCurrentTime] = useState('');
+    const [currentTime, setCurrentTime] = useState('');
 
-  const [selectedDate, setSelectedDate] = useState(new Date());
+    const [selectedDate, setSelectedDate] = useState(new Date());
 
-  const handleDateChange = (date) => {
-      setSelectedDate(date);
-  };
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+    };
 
-  useEffect(() => {
-      const interval = setInterval(() => {
-          const time = new Date().toLocaleTimeString('en-US', {
-              timeZone: 'Asia/Karachi',
-              hour12: true,
-              hour: 'numeric',
-              minute: 'numeric',
-              second: 'numeric'
-          });
-          setCurrentTime(time);
-      }, 1000);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const time = new Date().toLocaleTimeString('en-US', {
+                timeZone: 'Asia/Karachi',
+                hour12: true,
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            });
+            setCurrentTime(time);
+        }, 1000);
 
-      return () => clearInterval(interval);
-  }, []);
+        return () => clearInterval(interval);
+    }, []);
 
-  
   return (
     <>
       <div className='flex flex-row'>
@@ -81,8 +81,8 @@ export default function Sale() {
               <div className='w-screen flex flex-col h-[52rem]' style={{ backgroundColor: secondary_color }}>
                 <div className='flex flex-col justify-center items-center'>
                   <div className='flex flex-row'>
-                    <div className='py-6' style={{ background: secondary_color }}>
-                      <SideNav navigation={sale_navigation_items} />
+                    <div className='py-6 ' style={{ background: secondary_color }}>
+                      <SideNav navigation={stock_navigation_items} />
                     </div>
                     <div className='flex flex-col justify-center items-center py-6 pr-6'>
                     <div className='flex flex-col ml-4'>
@@ -91,7 +91,7 @@ export default function Sale() {
                         <CustomInput height={35} />
                         <CustomInput height={35} />
                         <h2>Date & Time</h2>
-                         
+                        
                         <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
                                       shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{height:35}}>   
                                         <DatePicker selected={selectedDate} onChange={handleDateChange} />
@@ -101,6 +101,7 @@ export default function Sale() {
                                         value={currentTime}
                                         height={35}
                                     />
+
 
                       </div>
                       <div className='flex flex-row'>

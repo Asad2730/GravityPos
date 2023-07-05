@@ -5,9 +5,12 @@ import { primary_color } from '../../utils/colors';
 import {  Link, Outlet } from 'react-router-dom';
 
 const navigation = [
+    { name: "Home", to: "/home", current: false },
     { name: "Sale", to: "/sale", current: false },
     { name: "Purchase", to: "/purchase", current: false },
     { name: "Stock", to: "/stock",  current: false },
+    { name: "Supplier", to: "/supplier",  current: false },
+    { name: "Report", to: "/report",  current: false },
     { name: "Calculator", to: "/calculator",  current: false },
     { name: "Set Default Printer", to: "/printer",  current: false },
     { name: "Logout", to: "/",  current: false },
@@ -15,7 +18,8 @@ const navigation = [
 
 export default function NavBar() {
   return (
-    <Disclosure as="nav" style={{backgroundColor:primary_color}} className="bg-white shadow ">
+  <>
+     <Disclosure as="nav" style={{backgroundColor:primary_color}} className="bg-white  shadow ">
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -48,6 +52,10 @@ export default function NavBar() {
          
         </>
       )}
+
     </Disclosure>
+
+   
+  </>
   )
 }
