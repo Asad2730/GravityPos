@@ -3,12 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
  import NavBar from './components/navbar/navbar';
 import './index.css'
 import Login from './pages/login';
-import Sale from './pages/sale';
+import Sale from './pages/Sale/sale';
 import Home from './pages/home';
-import Purchase from './pages/purchase';
-import Stock from './pages/stock';
-import Supplier from './pages/supplier';
+import AddPurchase from './pages/Purchase/addpurchase';
+import Stock from './pages/Stock/stock';
+import Supplier from './pages/Supplier/supplier';
 import Calculator from './pages/calculator';
+import PurchaseReturnAgainistBill from './pages/Purchase/returnAgainstBill';
+import PurchaseAdjustment from './pages/Purchase/purchaseAdjustment';
 
 
 function App() {
@@ -21,7 +23,9 @@ function App() {
           <Route element={<NavBar/>}>
           <Route path='/home' element={<Home/>}/>
           <Route path='/sale' element={<Sale/>}/>   
-          <Route path='/purchase' element={<Purchase/>}/>  
+          <Route path='/purchase' element={<AddPurchase/>}/>  
+          <Route path='/PurchaseReturnAgainistBill' element={<PurchaseReturnAgainistBill/>}/>
+          <Route path='/PurchaseAdjustment' element={<PurchaseAdjustment/>}/>
           <Route path='/stock' element={<Stock/>}/>  
           <Route path='/supplier' element={<Supplier/>}/>  
           <Route path='/calculator' element={<Calculator/>}/>

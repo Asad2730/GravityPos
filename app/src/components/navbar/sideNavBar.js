@@ -1,5 +1,6 @@
 
 import { primary_color} from '../../utils/colors'
+import { Link } from 'react-router-dom';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -18,7 +19,7 @@ export default function SideNav({navigation}) {
             <ul role="list" className="-mx-2 space-y-1">
              { navigation.map((item) => (
                 <li key={item.name}>
-                 
+                   <Link to={item.href}>
                     <a
                       href={item.href}
                       className={classNames(
@@ -29,7 +30,7 @@ export default function SideNav({navigation}) {
                       <item.icon className="h-6 w-6 shrink-0 text-gray-400" aria-hidden="true" />
                       <span className='text-white'>{item.name}</span>
                     </a>
-                                   
+                    </Link>            
                 </li>
               ))}
             </ul>

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Table from '../components/table/table';
-import CustomInput from '../components/ui/input';
-import { secondary_color } from '../utils/colors';
-import CustomDropDown from '../components/ui/dropDown';
-import SideNav from '../components/navbar/sideNavBar';
-import { sale_navigation_items } from '../components/navbar/navBarItems';
+import Table from '../../components/table/table';
+import CustomInput from '../../components/ui/input';
+import { secondary_color } from '../../utils/colors';
+import CustomDropDown from '../../components/ui/dropDown';
+import SideNav from '../../components/navbar/sideNavBar';
+import { sale_navigation_items } from '../../components/navbar/navBarItems';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -106,6 +106,7 @@ export default function Sale() {
                           <CustomInput height={35} />
 
                         </div>
+
                         <div className='flex flex-row'>
                           <span className='m-3'>Client Type</span>
                           <CustomDropDown />
@@ -123,19 +124,23 @@ export default function Sale() {
                           <CustomInput height={35} />
                           <span className='m-3'>Qty</span>
                           <CustomInput height={35} />
+
                           <span className='m-3'>Expiry Date</span>
                           <CustomInput height={35} />
                           <span className='m-3'>Batch#</span>
                           <CustomInput height={35} />
+
+                       
                         </div>
                         <div className='flex flex-row mt-2'>
+                        <span className='m-3'>Go Down</span>
+                          <CustomDropDown />
+                          <span className='m-3'>Disc%</span>
                           <CustomInput height={35} />
-                          <CustomInput type={'checkbox'} />
-                          <span className='ml-4'>Check
-                            Price</span>
-                          <span className='ml-4' />
-                          <CustomInput type={'checkbox'} />
-                          <span className='ml-4'>Search by generic</span>
+                          <span className='m-3'>Rate</span>
+                          <CustomInput height={35} />
+   
+                    
                         </div>
                       </div>
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Table from '../components/table/table';
-import CustomInput from '../components/ui/input';
-import { secondary_color } from '../utils/colors';
-import CustomDropDown from '../components/ui/dropDown';
-import SideNav from '../components/navbar/sideNavBar';
-import { supplier_navigation_items } from '../components/navbar/navBarItems';
+import Table from '../../components/table/table';
+import CustomInput from '../../components/ui/input';
+import { secondary_color } from '../../utils/colors';
+import CustomDropDown from '../../components/ui/dropDown';
+import SideNav from '../../components/navbar/sideNavBar';
+import { supplier_navigation_items } from '../../components/navbar/navBarItems';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 

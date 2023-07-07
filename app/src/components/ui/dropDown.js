@@ -21,7 +21,7 @@ export default function CustomDropDown({placeHolder,items}) {
 
 
   return (
-    <Menu as="div" className="relative inline-block text-left w-40 m-2">
+    <Menu as="div" className="relative inline-block text-left w-max m-2">
       <div>
         <Menu.Button className="inline-flex w-full  justify-end gap-x-1.5 rounded-md
          bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset
