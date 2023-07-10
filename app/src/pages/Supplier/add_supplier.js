@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+
 import Table from '../../components/table/table';
 import CustomInput from '../../components/ui/input';
 import { secondary_color } from '../../utils/colors';
 import CustomDropDown from '../../components/ui/dropDown';
 import SideNav from '../../components/navbar/sideNavBar';
 import { supplier_navigation_items } from '../../components/navbar/navBarItems';
-import DatePicker from 'react-datepicker';
+
 import 'react-datepicker/dist/react-datepicker.css';
 
 
@@ -46,32 +46,9 @@ const th = [
 
 
 
-export default function Supplier() {
+export default function AddSupplier() {
 
   
-    const [currentTime, setCurrentTime] = useState('');
-
-    const [selectedDate, setSelectedDate] = useState(new Date());
-    
-
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
-    };
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const time = new Date().toLocaleTimeString('en-US', {
-                timeZone: 'Asia/Karachi',
-                hour12: true,
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric'
-            });
-            setCurrentTime(time);
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, []);
 
   return (
     <>
@@ -88,51 +65,72 @@ export default function Supplier() {
                     <div className='flex flex-col justify-center items-center py-6 pr-6'>
                     <div className='flex flex-col ml-4'>
                       <div className='flex flex-row my-2 space-x-2'>
-                        <h1>Bill No.</h1>
+                        <h1>Code</h1>
                         <CustomInput height={35} />
+                     
+                        <h2>Alias</h2>
                         <CustomInput height={35} />
-                        <h2>Date & Time</h2>
+
+                        <h2>Name</h2>
+                        <CustomInput height={35} />
+
+                        <h2>Sales_Tax_No.</h2>
+                        <CustomInput height={35} />
                        
-                        <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
-                                      shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{height:35}}>   
-                                        <DatePicker selected={selectedDate} onChange={handleDateChange} />
-                                    </span>
-                                    <CustomInput
-                                        readOnly={false}
-                                        value={currentTime}
-                                        height={35}
-                                    />
                       </div>
 
-                      <div className='flex flex-row'>
-                        <span className='m-3'>Client Type</span>
-                        <CustomDropDown />
-                        <span className='m-3'>Client Name</span>
+                      <div className='flex flex-row mt-2 '>
+                        <span className='m-3'>NTN_No.</span>
+                        <CustomInput height={35} />
+                        <span className='m-3'>Company_Name</span>
+                        <CustomInput height={35} />
+
+                        <span className='m-3'>Phone#</span>
+                        <CustomInput height={35} />
+
+                        <span className='m-3'>Fax#</span>
+                        <CustomInput height={35} />
+
+                      </div>
+
+                      <div className='flex flex-row mt-2 '>
+                        <span className='m-3'>Mobile</span>
+                        <CustomInput height={35} />
+                        <span className='m-3'>E_Mail</span>
+                        <CustomInput height={35} />
+                        <span className='m-3'>Route</span>
+                        <CustomInput height={35} />
+                        <span className='m-3'>Area</span>
+                        <CustomInput height={35} />
+                       
+                      </div>
+
+                      <div className='flex flex-row mt-2'>
+                       <span className='m-3'>Sub_Area</span>
+                        <CustomInput height={35} />
+                        <span className='m-3'>City</span>
+                        <CustomInput height={35} />
+
+                        <span className='m-3'>Address</span>
+                        <CustomInput height={35} />
+                        <span className='m-3'>Sale_Person</span>
                         <CustomInput height={35} />
                       </div>
+
                       <div className='flex flex-row mt-2'>
-                        <span className='m-3'>Code</span>
-                        <CustomInput height={35} />
-                        <span className='m-3'>Name</span>
-                        <CustomInput height={35} />
-                        <span className='m-3'>Bonus</span>
-                        <CustomInput height={35} />
-                        <span className='m-3'>Qty</span>
+                       <span className='m-3'>Sale_Price</span>
                         <CustomInput height={35} />
                         <span className='m-3'>Disc%</span>
                         <CustomInput height={35} />
-                        <span className='m-3'>Up</span>
+
+                        <span className='m-3'>Bank_Name</span>
+                        <CustomInput height={35} />
+                        <span className='m-3'>Account_Title</span>
+                        <CustomInput height={35} />
+                        <span className='m-3'>Account#</span>
                         <CustomInput height={35} />
                       </div>
-                      <div className='flex flex-row mt-2'>
-                        <CustomInput height={35} />
-                        <CustomInput type={'checkbox'} />
-                        <span className='ml-4'>Check
-                          Price</span>
-                        <span className='ml-4' />
-                        <CustomInput type={'checkbox'} />
-                        <span className='ml-4'>Search by generic</span>
-                      </div>
+
                     </div>
 
                     <div className='flex w-full items-center justify-between mb-5'>

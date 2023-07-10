@@ -9,7 +9,7 @@ const navigation = [
     { name: "Sale", to: "/sale", current: false },
     { name: "Purchase", to: "/purchase", current: false },
     { name: "Stock", to: "/stock",  current: false },
-    { name: "Supplier", to: "/supplier",  current: false },
+    { name: "Supplier", to: "/addSupplier",  current: false },
     { name: "Report", to: "/report",  current: false },
     { name: "Set Default Printer", to: "/printer",  current: false },
     { name: "Logout", to: "/",  current: false },
@@ -47,8 +47,8 @@ export default function NavBar() {
 
           </div>
           <Outlet/> 
+          
 
-         
         </>
       )}
 
