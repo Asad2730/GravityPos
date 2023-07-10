@@ -11,7 +11,6 @@ const navigation = [
     { name: "Stock", to: "/stock",  current: false },
     { name: "Supplier", to: "/supplier",  current: false },
     { name: "Report", to: "/report",  current: false },
-    { name: "Calculator", to: "/calculator",  current: false },
     { name: "Set Default Printer", to: "/printer",  current: false },
     { name: "Logout", to: "/",  current: false },
   ];

@@ -8,7 +8,6 @@ import Home from './pages/home';
 import AddPurchase from './pages/Purchase/addpurchase';
 import Stock from './pages/Stock/stock';
 import Supplier from './pages/Supplier/supplier';
-import Calculator from './pages/calculator';
 import PurchaseReturnAgainistBill from './pages/Purchase/returnAgainstBill';
 import PurchaseAdjustment from './pages/Purchase/purchaseAdjustment';
 
@@ -18,8 +17,7 @@ function App() {
    <>
      <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Login/>}/>
-       
+          <Route path='/' element={<Login/>}/>    
           <Route element={<NavBar/>}>
           <Route path='/home' element={<Home/>}/>
           <Route path='/sale' element={<Sale/>}/>   
@@ -28,7 +26,6 @@ function App() {
           <Route path='/PurchaseAdjustment' element={<PurchaseAdjustment/>}/>
           <Route path='/stock' element={<Stock/>}/>  
           <Route path='/supplier' element={<Supplier/>}/>  
-          <Route path='/calculator' element={<Calculator/>}/>
           </Route>
         </Routes>
      </BrowserRouter>
