@@ -149,7 +149,7 @@ export default function PurchaseRefund() {
                             />
 
 
-                            <div className='border-2  p-6 rounded-xl mt-6' >
+                            <div className='border-2  p-6 rounded-xl mt-5' >
                               <div className='flex flex-row mt-6'>
                                 <span className='ml-4'>Total=of_Item</span>
                                 <CustomInput height={35} />
