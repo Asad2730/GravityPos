@@ -80,39 +80,44 @@ export default function PurchaseRefund() {
                       <div className='flex flex-row justify-between'>
 
                         <div className='p-2 flex '>
-                             <h1 className='text-2xl font-bold p-6'>PurchaseRefund</h1>
+                             <h1 className='text-2xl font-bold p-6 '>PurchaseRefund</h1>
                         </div>
 
                         <div className='p-2 flex '>
-                        
+                           <IconButton
+                            title={'Done'}
+                            Icon={MdFileDownloadDone}
+                            size={30}
+                            w={28}
+                            h={12}
+                            direction={'row'}
+                            />
+
                             <IconButton
                             title={'Export'}
                             Icon={PiExportBold}
-                            size={40}
-                            w={40}
-                            h={24}
+                            size={30}
+                            w={28}
+                            h={12}
+                            direction={'row'}
                              />
                         
                           <IconButton
                             title={'Print'}
                             Icon={HiPrinter}
-                            size={40}
-                            w={40}
-                            h={24}
+                            size={30}
+                            w={28}
+                            h={12}
+                            direction={'row'}
                           />
-                          <IconButton
-                            title={'Done'}
-                            Icon={MdFileDownloadDone}
-                            size={40}
-                            w={40}
-                            h={24}
-                          />
+                        
                           <IconButton
                             title={'Clear'}
                             Icon={AiOutlineClear}
-                            size={40}
-                            w={40}
-                            h={24}
+                            size={30}
+                            w={28}
+                            h={12}
+                            direction={'row'}
                           />
                         </div>
                       </div>

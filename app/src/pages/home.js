@@ -177,6 +177,7 @@ export default function Home() {
                                 size={iconSize}
                                 w={40}
                                 h={28}
+                                direction={'col'}
                             />
                             <IconButton
                                 Icon={GiCancel}
@@ -184,6 +185,7 @@ export default function Home() {
                                 size={iconSize}
                                 w={40}
                                 h={28}
+                                direction={'col'}
                             />
                         </div>
                         <div className='flex flex-row'>
@@ -193,6 +195,7 @@ export default function Home() {
                                 size={iconSize}
                                 w={40}
                                 h={28}
+                                direction={'col'}
 
                             />
                             <IconButton
@@ -201,6 +204,7 @@ export default function Home() {
                                 size={iconSize}
                                 w={40}
                                 h={28}
+                                direction={'col'}
 
                             />
                         </div>
@@ -211,6 +215,7 @@ export default function Home() {
                                 size={iconSize}
                                 w={40}
                                 h={28}
+                                direction={'col'}
                             />
                             <IconButton
                                 Icon={CiCircleRemove}
@@ -218,6 +223,7 @@ export default function Home() {
                                 size={iconSize}
                                 w={40}
                                 h={28}
+                                direction={'col'}
 
                             />
                         </div>
@@ -228,6 +234,7 @@ export default function Home() {
                                 size={60}        
                                 w={'full'}
                                 h={28}
+                                direction={'col'}
                             />
                         </div>
                     </div>
