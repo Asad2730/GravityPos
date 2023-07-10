@@ -84,21 +84,24 @@ export default function PurchaseRefund() {
                     </div>
                     <div className='flex flex-col justify-center items-center py-6 pr-6'>
                       <div className='flex flex-col ml-4'>
-                        <div className='flex flex-row my-2 space-x-2'>
-                          <h1>R_Id</h1>
+                    
+                    {/* section-1 */}
+                    <div className='border-2  p-6 rounded-xl justify-center items-center ' >
+                        <div className='flex flex-row '>
+                        <span className='m-3'>Refrence</span>
                           <CustomInput height={35} />
-                          <h2>R_Date</h2>
+                          <span className='m-3'>Refrence</span>
 
                           <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
                                       shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
                             <DatePicker selected={selectedDate} onChange={handleDateChange} />
                           </span>
-                          <h2>Supplier_Id</h2>
+                          <span className='m-3'>Refrence</span>
                           <CustomInput height={35} />
-                          <h2>Supplier_Name</h2>
+                          <span className='m-3'>Refrence</span>
                           <CustomInput height={35} />
                         </div>
-                        <div className='flex flex-row'>
+                        <div className='flex flex-row mt-2'>
                           <span className='m-3'>Refrence</span>
                           <CustomInput height={35} />
                           <span className='m-3'>Desc</span>
@@ -138,8 +141,10 @@ export default function PurchaseRefund() {
                           <CustomInput height={35} />
 
                         </div>
+                      
+                      </div>
 
-
+                      {/* end of section-2 */}
 
                         <div className="flex w-full items-center justify-between mb-5">
                           <div className="">
@@ -148,9 +153,9 @@ export default function PurchaseRefund() {
                               tr={tr}
                             />
 
-
+                            {/* section-2 */}
                             <div className='border-2  p-6 rounded-xl mt-5' >
-                              <div className='flex flex-row mt-6'>
+                              <div className='flex flex-row mt-6 justify-center items-center'>
                                 <span className='ml-4'>Total=of_Item</span>
                                 <CustomInput height={35} />
                                 <span className='ml-4'>Total_Bonus</span>
@@ -163,25 +168,30 @@ export default function PurchaseRefund() {
                                 <CustomInput height={35} />
                               </div>
 
-                              <div className='flex flex-row mt-8'>
+                              <div className='flex flex-row mt-8 ml-60 justify-center items-center '>
                                 <span className='ml-4'>courier/AddaChanges</span>
                                 <CustomInput height={35} />
                                 <span className='ml-4'>FlatDisc%</span>
                                 <CustomInput height={35} />
                                 <span className='ml-4'> FlatGst </span>
                                 <CustomInput height={35} />
+                          
+                              </div>
+
+                              <div className='flex flex-row mt-8  ml-60  justify-center items-center'>
+                        
                                 <span className='ml-4 '> Other_Changes </span>
                                 <CustomInput height={35} />
                                 <span className='ml-4'>Return_Amount</span>
                                 <CustomInput height={35} />
                               </div>
                             </div>
-
-                          
+                   
+                           {/* end of section-2 */}
 
                           </div>
 
-                          {/* below table */}
+                       
 
                         </div>
 
