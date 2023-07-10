@@ -46,23 +46,24 @@ export default function PurchaseAdjustment() {
                                             <div className='flex flex-col ml-4'>
 
                                                 {/* start of section 1 */}
-                                                <div className='border-2 border-black p-5 rounded-xl'>
-                                                    <div className='flex flex-row my-2 space-x-2'>
-                                                        <h1>Id</h1>
+                                                <div className='border-2 border-black p-5 rounded-xl justify-center items-center'>
+                                                    <div className='flex flex-row '>
+                                                    <span className='m-3'>Id</span>
                                                         <CustomInput height={35} />
-                                                        <h2>Date</h2>
+                                                        <span className='m-3'>Date</span>
+            
                                                         <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
                                                       shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
                                                             <DatePicker selected={selectedDate} onChange={handleDateChange} />
                                                         </span>
 
-                                                        <h2>Transaction_No</h2>
+                                                        <span className='m-3'>Transaction_No</span>
                                                         <CustomInput height={35} />
 
-                                                        <h2>Type</h2>
+                                                        <span className='m-3'>Type</span>
                                                         <CustomInput height={35} />
                                                     </div>
-                                                    <div className='flex flex-row'>
+                                                    <div className='flex flex-row mt-2'>
                                                         <span className='m-3'>Invoice_No</span>
                                                         <CustomInput height={35} />
                                                         <span className='m-3'>Invoice_Date</span>
@@ -95,7 +96,7 @@ export default function PurchaseAdjustment() {
 
 
                                                 {/* start of section 2 */}
-                                                <div className='border-2 border-black p-5 rounded-xl mt-3'>
+                                                <div className='border-2 border-black p-5 rounded-xl mt-3 justify-center items-center'>
                                                     <div className='flex flex-row mt-6'>
                                                         <span className='ml-4'>Action</span>
                                                         <CustomDropDown />
@@ -194,7 +195,7 @@ export default function PurchaseAdjustment() {
 
                                                 {/* start of section 3 */}
 
-                                                <div className='border-2 border-black p-5 rounded-xl mt-3'>
+                                                <div className='border-2 border-black p-5 rounded-xl mt-3 justify-center items-center'>
                                                     <div className='flex flex-row mt-6'>
                                                         <span className='ml-4'>Loose_Purchase</span>
                                                         <CustomInput type={'checkbox'} />
@@ -205,7 +206,7 @@ export default function PurchaseAdjustment() {
 
                                                 {/* end  of section 3 */}
 
-                                                <div className='border-2 border-black p-5 rounded-xl mt-3'>
+                                                <div className='border-2 border-black p-5 rounded-xl mt-3 justify-center items-center'>
                                                     <h1 className='font-bold  text-lg gap-5 py-2'>Before</h1>
                                                     <div className='flex flex-row mt-6'>
                                                         <span className='ml-4'>Courier/Adda changes</span>
@@ -232,7 +233,7 @@ export default function PurchaseAdjustment() {
                                                     <div className='flex flex-row mt-6'>
                                                         <span className='ml-4'>TotalItem</span>
                                                         <CustomInput height={35} />
-                                                        <span className='ml-4'>Total = Of Item</span>
+                                                        <span className='ml-4'>Total=Of_Item</span>
                                                         <CustomInput height={35} />
                                                         <span className='ml-4'>NetPayable</span>
                                                         <CustomInput height={35} />
@@ -243,7 +244,7 @@ export default function PurchaseAdjustment() {
 
                                                 {/* final section */}
 
-                                                <div className='border-2 border-black p-5 rounded-xl mt-3' >
+                                                <div className='border-2 border-black p-5 rounded-xl mt-3 justify-center items-center' >
                                                     <h1 className='font-bold  text-lg gap-5 py-2'>After</h1>
                                                     <div className='flex flex-row mt-6'>
                                                         <span className='ml-4'>Courier/Adda changes</span>
@@ -270,7 +271,7 @@ export default function PurchaseAdjustment() {
                                                     <div className='flex flex-row mt-6'>
                                                         <span className='ml-4'>TotalItem</span>
                                                         <CustomInput height={35} />
-                                                        <span className='ml-4'>Total = Of Item</span>
+                                                        <span className='ml-4'>Total=Of_Item</span>
                                                         <CustomInput height={35} />
                                                         <span className='ml-4'>NetPayable</span>
                                                         <CustomInput height={35} />

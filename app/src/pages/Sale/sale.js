@@ -86,12 +86,15 @@ export default function Sale() {
                     </div>
                     <div className='flex flex-col justify-center items-center py-6 pr-6'>
                       <div className='flex flex-col ml-4'>
-                        <div className='flex flex-row my-2 space-x-2'>
-                          <h1>R-Id</h1>
+
+                        
+                        <div className='flex flex-row '>
+                        
+                          <span className='m-3'>R_Id</span>
                           <CustomInput height={35} />
 
-                          <h2>R-Date</h2>
-
+                        
+                          <span className='m-3'>R_Date</span>
                           <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
                                       shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
                             <DatePicker selected={selectedDate} onChange={handleDateChange} />
@@ -102,17 +105,18 @@ export default function Sale() {
                             height={35}
                           />
 
-                          <h1>Ref#</h1>
+                        
+                          <span className='m-3'>Ref#</span>
                           <CustomInput height={35} />
 
                         </div>
 
-                        <div className='flex flex-row'>
-                          <span className='m-3'>Client Type</span>
+                        <div className='flex flex-row mt-2'>
+                          <span className='m-3'>Client_Type</span>
                           <CustomDropDown />
-                          <span className='m-3'>Client Name</span>
+                          <span className='m-3'>Client_Name</span>
                           <CustomInput height={35} />
-                          <span className='m-3'>Sale Person</span>
+                          <span className='m-3'>Sale_Person</span>
                           <CustomInput height={35} />
                         </div>
                         <div className='flex flex-row mt-2'>
@@ -125,7 +129,7 @@ export default function Sale() {
                           <span className='m-3'>Qty</span>
                           <CustomInput height={35} />
 
-                          <span className='m-3'>Expiry Date</span>
+                          <span className='m-3'>Expiry_Date</span>
                           <CustomInput height={35} />
                           <span className='m-3'>Batch#</span>
                           <CustomInput height={35} />
@@ -133,7 +137,7 @@ export default function Sale() {
                        
                         </div>
                         <div className='flex flex-row mt-2'>
-                        <span className='m-3'>Go Down</span>
+                        <span className='m-3'>GoDown</span>
                           <CustomDropDown />
                           <span className='m-3'>Disc%</span>
                           <CustomInput height={35} />
