@@ -20,10 +20,8 @@ export const purchase_navigation_items = [
 ];
 
 export const stock_navigation_items = [
-  { name: 'add stock', href: '#', icon: DocumentDuplicateIcon, current: false },
-  { name: 'stock increase', icon: ChartPieIcon, current: false },
-  { name: 'stock decrease', icon: UsersIcon, current: false },
-  { name: 'search', icon: FolderIcon, current: false },
+  { name: 'add stock', href: '/stock', icon: DocumentDuplicateIcon, current: false },
+  { name: 'stock increase/decrease',href:'/Stock_Increase_Decrease', icon: ChartPieIcon, current: false },
 ];
 
 export const supplier_navigation_items = [

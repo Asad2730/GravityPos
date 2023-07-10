@@ -11,6 +11,7 @@ import PurchaseOrder from './pages/Purchase/purchaseOrder';
 import PurchaseRefund from './pages/Purchase/purchaseRefund';
 import AddSupplier from './pages/Supplier/add_supplier';
 import Sale from './pages/Sale/sale';
+import Stock_Increase_Decrease from './pages/Stock/increase_decrease';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path='/PurchaseAdjustment' element={<PurchaseAdjustment/>}/>
           <Route path='/purchaseOrder' element={<PurchaseOrder/>}/>
           <Route path='/stock' element={<Stock/>}/>  
+          <Route path='/Stock_Increase_Decrease' element={<Stock_Increase_Decrease/>}/>
           <Route path='/addSupplier' element={<AddSupplier/>}/>  
           
           </Route>

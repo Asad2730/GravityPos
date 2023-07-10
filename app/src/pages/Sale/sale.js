@@ -81,19 +81,29 @@ export default function Sale() {
               <div className='w-screen flex flex-col h-[52rem]' style={{ backgroundColor: secondary_color }}>
                 <div className='flex flex-col justify-center items-center'>
                   <div className='flex flex-row'>
-                    <div className='py-6' style={{ background: secondary_color }}>
+
+                    {/* <div className='py-6' style={{ background: secondary_color }}>
                       <SideNav navigation={sale_navigation_items} />
-                    </div>
-                    <div className='flex flex-col justify-center items-center py-6 pr-6'>
+                    </div> */}
+
+                    <div className='flex flex-col py-6 pr-6'>
+
+
+                      <div className='p-2 flex  justify-items-start'>
+                        <h1 className='text-2xl font-bold p-6 '>Stock Increase Decrease</h1>
+                      </div>
+
+
+
                       <div className='flex flex-col ml-4'>
 
-                        
+
                         <div className='flex flex-row '>
-                        
+
                           <span className='m-3'>R_Id</span>
                           <CustomInput height={35} />
 
-                        
+
                           <span className='m-3'>R_Date</span>
                           <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
                                       shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
@@ -105,7 +115,7 @@ export default function Sale() {
                             height={35}
                           />
 
-                        
+
                           <span className='m-3'>Ref#</span>
                           <CustomInput height={35} />
 
@@ -134,17 +144,17 @@ export default function Sale() {
                           <span className='m-3'>Batch#</span>
                           <CustomInput height={35} />
 
-                       
+
                         </div>
                         <div className='flex flex-row mt-2'>
-                        <span className='m-3'>GoDown</span>
+                          <span className='m-3'>GoDown</span>
                           <CustomDropDown />
                           <span className='m-3'>Disc%</span>
                           <CustomInput height={35} />
                           <span className='m-3'>Rate</span>
                           <CustomInput height={35} />
-   
-                    
+
+
                         </div>
                       </div>
 

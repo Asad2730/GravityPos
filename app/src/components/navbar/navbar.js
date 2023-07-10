@@ -18,7 +18,7 @@ const navigation = [
 export default function NavBar() {
   return (
   <>
-     <Disclosure as="nav" style={{backgroundColor:primary_color}} className="bg-white  shadow ">
+     <Disclosure as="nav" style={{backgroundColor:primary_color}} className="bg-white  shadow w-screen">
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">
