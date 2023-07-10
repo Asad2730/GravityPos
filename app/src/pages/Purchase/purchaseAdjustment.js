@@ -6,6 +6,7 @@ import SideNav from '../../components/navbar/sideNavBar';
 import { purchase_navigation_items } from '../../components/navbar/navBarItems';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import CustomButton from '../../components/ui/button';
 
 export default function PurchaseAdjustment() {
     const [currentTime, setCurrentTime] = useState('');
@@ -45,17 +46,28 @@ export default function PurchaseAdjustment() {
                                         <div className='flex flex-col justify-center items-center py-6 pr-6 '>
                                             <div className='flex flex-col ml-4'>
 
-                                                {/* start of section 1 */}
+
+                                                {/* section-0 */}
                                                 <div className='border-2 border-black p-5 rounded-xl justify-center items-center'>
                                                     <div className='flex flex-row '>
-                                                    <span className='m-3'>Id</span>
+
+                                                        <span className='m-3'>Id</span>
                                                         <CustomInput height={35} />
                                                         <span className='m-3'>Date</span>
-            
+
                                                         <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
                                                       shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
                                                             <DatePicker selected={selectedDate} onChange={handleDateChange} />
                                                         </span>
+                                                    </div>
+                                                </div>
+
+                                                {/* end-section-0 */}
+
+                                                {/* start of section 1 */}
+
+                                                <div className='border-2 border-black p-5 rounded-xl justify-center items-center mt-2'>
+                                                    <div className='flex flex-row '>
 
                                                         <span className='m-3'>Transaction_No</span>
                                                         <CustomInput height={35} />
@@ -188,6 +200,12 @@ export default function PurchaseAdjustment() {
                                                         <span className='ml-4'>Amount</span>
                                                         <CustomInput height={35} />
                                                     </div>
+                                                    <div className='flex flex-row mt-6'>
+                                                        <CustomInput type={'checkbox'} />
+                                                        <span className='ml-4 mt-1'>Loose_Purchase</span>
+
+
+                                                    </div>
 
                                                 </div>
                                                 {/* end of section 2 */}
@@ -195,13 +213,9 @@ export default function PurchaseAdjustment() {
 
                                                 {/* start of section 3 */}
 
-                                                <div className='border-2 border-black p-5 rounded-xl mt-3 justify-center items-center'>
-                                                    <div className='flex flex-row mt-6'>
-                                                        <span className='ml-4'>Loose_Purchase</span>
-                                                        <CustomInput type={'checkbox'} />
-                                                        <span className='ml-4'>Calculate</span>
-                                                        <CustomInput height={35} />
-                                                    </div>
+
+                                                <div className='flex flex-row mt-6' >
+                                                    <CustomButton label={'Calculate'} />
                                                 </div>
 
                                                 {/* end  of section 3 */}

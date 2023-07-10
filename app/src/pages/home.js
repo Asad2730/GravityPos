@@ -175,11 +175,15 @@ export default function Home() {
                                 Icon={AiOutlineDelete}
                                 title={'Clear Sale'}
                                 size={iconSize}
+                                w={40}
+                                h={28}
                             />
                             <IconButton
                                 Icon={GiCancel}
                                 title={'Cancel Item'}
                                 size={iconSize}
+                                w={40}
+                                h={28}
                             />
                         </div>
                         <div className='flex flex-row'>
@@ -187,12 +191,16 @@ export default function Home() {
                                 Icon={AiOutlineReload}
                                 title={'Return'}
                                 size={iconSize}
+                                w={40}
+                                h={28}
 
                             />
                             <IconButton
                                 Icon={AiOutlineEdit}
                                 title={'Edit'}
                                 size={iconSize}
+                                w={40}
+                                h={28}
 
                             />
                         </div>
@@ -201,12 +209,15 @@ export default function Home() {
                                 Icon={AiOutlinePauseCircle}
                                 title={'Hold'}
                                 size={iconSize}
-
+                                w={40}
+                                h={28}
                             />
                             <IconButton
                                 Icon={CiCircleRemove}
                                 title={'Cancellation'}
                                 size={iconSize}
+                                w={40}
+                                h={28}
 
                             />
                         </div>
@@ -214,9 +225,9 @@ export default function Home() {
                             <IconButton
                                 Icon={BsSendCheck}
                                 title={'pay'}
-                                size={60}
-                                width={333}
-                                height={130}
+                                size={60}        
+                                w={'full'}
+                                h={28}
                             />
                         </div>
                     </div>
@@ -224,7 +235,7 @@ export default function Home() {
                 </div>
 
                 <footer>
-                    <div className='flex flex-row h-[11.3rem]'>
+                    <div className='flex flex-row h-[11.3rem] '>
                         <div className='flex flex-col w-1/5'>
                             <div className='flex flex-row  items-center justify-center m-2'>
                                 <span className='text-white w-40'>No of item</span>

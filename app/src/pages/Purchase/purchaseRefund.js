@@ -6,6 +6,11 @@ import { purchase_navigation_items } from '../../components/navbar/navBarItems';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Table from '../../components/table/table';
+import { PiExportBold } from 'react-icons/pi';
+import { HiPrinter } from 'react-icons/hi';
+import { MdFileDownloadDone } from 'react-icons/md';
+import { AiOutlineClear } from 'react-icons/ai';
+import IconButton from '../../components/ui/iconButton';
 
 
 
@@ -47,7 +52,7 @@ const th = [
 export default function PurchaseRefund() {
 
 
-  const [currentTime, setCurrentTime] = useState('');
+
 
   const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -55,20 +60,6 @@ export default function PurchaseRefund() {
     setSelectedDate(date);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const time = new Date().toLocaleTimeString('en-US', {
-        timeZone: 'Asia/Karachi',
-        hour12: true,
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric'
-      });
-      setCurrentTime(time);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <>
@@ -76,77 +67,120 @@ export default function PurchaseRefund() {
         <div className='w-auto'>
           <div className='flex flex-col'>
             <div className='flex flex-row'>
-              <div className='w-screen flex flex-col h-[52rem]' style={{ backgroundColor: secondary_color }}>
+              <div className='w-screen flex flex-col h-full' style={{ backgroundColor: secondary_color }}>
                 <div className='flex flex-col justify-center items-center'>
                   <div className='flex flex-row'>
                     <div className='py-6 ' style={{ background: secondary_color }}>
                       <SideNav navigation={purchase_navigation_items} />
                     </div>
-                    <div className='flex flex-col justify-center items-center py-6 pr-6'>
-                      <div className='flex flex-col ml-4'>
-                    
-                    {/* section-1 */}
-                    <div className='border-2  p-6 rounded-xl justify-center items-center ' >
-                        <div className='flex flex-row '>
-                        <span className='m-3'>Refrence</span>
-                          <CustomInput height={35} />
-                          <span className='m-3'>Refrence</span>
 
-                          <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
-                                      shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
-                            <DatePicker selected={selectedDate} onChange={handleDateChange} />
-                          </span>
-                          <span className='m-3'>Refrence</span>
-                          <CustomInput height={35} />
-                          <span className='m-3'>Refrence</span>
-                          <CustomInput height={35} />
-                        </div>
-                        <div className='flex flex-row mt-2'>
-                          <span className='m-3'>Refrence</span>
-                          <CustomInput height={35} />
-                          <span className='m-3'>Desc</span>
-                          <CustomInput height={35} />
-                          <span className='m-3'>Remarks</span>
-                          <CustomInput height={35} />
-                          <span className='m-3'>Billty#</span>
-                          <CustomInput height={35} />
-                        </div>
-                        <div className='flex flex-row mt-2'>
 
-                          <span className='m-3'>C/Adda</span>
-                          <CustomInput height={35} />
-                          <span className='ml-4'> Code </span>
-                          <CustomInput height={35} />
-                          <span className='ml-4'>Name</span>
-                          <CustomInput height={35} />
-                          <span className='ml-4'>Batch#</span>
-                          <CustomInput height={35} />
-                        </div>
-                        <div className='flex flex-row mt-2'>
+                    <div className='flex flex-col  py-6 pr-6'>
 
-                          <span className='ml-4'> P_price </span>
-                          <CustomInput height={35} />
-                          <span className='ml-4'> Pack </span>
-                          <CustomInput height={35} />
-                          <span className='ml-4'>l.dISC%</span>
-                          <CustomInput height={35} />
-                          <span className='ml-4'>l.gst</span>
-                          <CustomInput height={35} />
-                        </div>
-                        <div className='flex flex-row mt-2'>
+                      <div className='flex flex-row justify-between'>
 
-                          <span className='ml-4'> godown </span>
-                          <CustomInput height={35} />
-                          <span className='ml-4'> bonus </span>
-                          <CustomInput height={35} />
-
+                        <div className='p-2 flex '>
+                             <h1 className='text-2xl font-bold p-6'>PurchaseRefund</h1>
                         </div>
-                      
+
+                        <div className='p-2 flex '>
+                        
+                            <IconButton
+                            title={'Export'}
+                            Icon={PiExportBold}
+                            size={40}
+                            w={40}
+                            h={24}
+                             />
+                        
+                          <IconButton
+                            title={'Print'}
+                            Icon={HiPrinter}
+                            size={40}
+                            w={40}
+                            h={24}
+                          />
+                          <IconButton
+                            title={'Done'}
+                            Icon={MdFileDownloadDone}
+                            size={40}
+                            w={40}
+                            h={24}
+                          />
+                          <IconButton
+                            title={'Clear'}
+                            Icon={AiOutlineClear}
+                            size={40}
+                            w={40}
+                            h={24}
+                          />
+                        </div>
                       </div>
 
-                      {/* end of section-2 */}
+                      <div className='flex flex-col ml-4 '>
 
-                        <div className="flex w-full items-center justify-between mb-5">
+                        {/* section-1 */}
+                        <div className='border-2  p-6 rounded-xl justify-center items-center ' >
+                          <div className='flex flex-row '>
+                            <span className='m-3'>Refrence</span>
+                            <CustomInput height={35} />
+                            <span className='m-3'>Refrence</span>
+
+                            <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
+                                      shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
+                              <DatePicker selected={selectedDate} onChange={handleDateChange} />
+                            </span>
+                            <span className='m-3'>Refrence</span>
+                            <CustomInput height={35} />
+                            <span className='m-3'>Refrence</span>
+                            <CustomInput height={35} />
+                          </div>
+                          <div className='flex flex-row mt-2'>
+                            <span className='m-3'>Refrence</span>
+                            <CustomInput height={35} />
+                            <span className='m-3'>Desc</span>
+                            <CustomInput height={35} />
+                            <span className='m-3'>Remarks</span>
+                            <CustomInput height={35} />
+                            <span className='m-3'>Billty#</span>
+                            <CustomInput height={35} />
+                          </div>
+                          <div className='flex flex-row mt-2'>
+
+                            <span className='m-3'>C/Adda</span>
+                            <CustomInput height={35} />
+                            <span className='ml-4'> Code </span>
+                            <CustomInput height={35} />
+                            <span className='ml-4'>Name</span>
+                            <CustomInput height={35} />
+                            <span className='ml-4'>Batch#</span>
+                            <CustomInput height={35} />
+                          </div>
+                          <div className='flex flex-row mt-2'>
+
+                            <span className='ml-4'> P_price </span>
+                            <CustomInput height={35} />
+                            <span className='ml-4'> Pack </span>
+                            <CustomInput height={35} />
+                            <span className='ml-4'>l.dISC%</span>
+                            <CustomInput height={35} />
+                            <span className='ml-4'>l.gst</span>
+                            <CustomInput height={35} />
+                          </div>
+                          <div className='flex flex-row mt-2'>
+
+                            <span className='ml-4'> godown </span>
+                            <CustomInput height={35} />
+                            <span className='ml-4'> bonus </span>
+                            <CustomInput height={35} />
+
+                          </div>
+
+                        </div>
+
+                        {/* end of section-2 */}
+
+                        <div className="flex w-full h-full items-center justify-between mb-5">
                           <div className="">
                             <Table
                               th={th}
@@ -175,23 +209,28 @@ export default function PurchaseRefund() {
                                 <CustomInput height={35} />
                                 <span className='ml-4'> FlatGst </span>
                                 <CustomInput height={35} />
-                          
+
                               </div>
 
                               <div className='flex flex-row mt-8  ml-60  justify-center items-center'>
-                        
+
                                 <span className='ml-4 '> Other_Changes </span>
                                 <CustomInput height={35} />
                                 <span className='ml-4'>Return_Amount</span>
                                 <CustomInput height={35} />
                               </div>
+
+
                             </div>
-                   
-                           {/* end of section-2 */}
+
+
+
+
+                            {/* end of section-2 */}
 
                           </div>
 
-                       
+
 
                         </div>
 
