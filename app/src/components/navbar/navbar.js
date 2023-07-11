@@ -8,9 +8,9 @@ const navigation = [
     { name: "Home", to: "/home", current: false },
     { name: "Sale", to: "/sale", current: false },
     { name: "Purchase", to: "/purchase", current: false },
-    { name: "Stock", to: "/stock",  current: false },
+    { name: "Stock", to: "/addstock",  current: false },
     { name: "Supplier", to: "/addSupplier",  current: false },
-    { name: "Report", to: "/report",  current: false },
+    { name: "Report", to: "/salesReport",  current: false },
     { name: "Set Default Printer", to: "/printer",  current: false },
     { name: "Logout", to: "/",  current: false },
   ];
@@ -18,7 +18,7 @@ const navigation = [
 export default function NavBar() {
   return (
   <>
-     <Disclosure as="nav" style={{backgroundColor:primary_color}} className="bg-white  shadow w-screen">
+     <Disclosure as="nav" style={{backgroundColor:primary_color}} className="bg-white  shadow w-screen ">
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-8">

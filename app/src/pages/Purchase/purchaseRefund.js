@@ -50,16 +50,11 @@ const th = [
 
 
 export default function PurchaseRefund() {
-
-
-
-
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
-
 
   return (
     <>
@@ -80,28 +75,28 @@ export default function PurchaseRefund() {
                       <div className='flex flex-row justify-between'>
 
                         <div className='p-2 flex '>
-                             <h1 className='text-2xl font-bold p-6 '>PurchaseRefund</h1>
+                          <h1 className='text-2xl font-bold p-6 '>PurchaseRefund</h1>
                         </div>
 
                         <div className='p-2 flex '>
-                           <IconButton
+                          <IconButton
                             title={'Done'}
                             Icon={MdFileDownloadDone}
                             size={30}
                             w={28}
                             h={12}
                             direction={'row'}
-                            />
+                          />
 
-                            <IconButton
+                          <IconButton
                             title={'Export'}
                             Icon={PiExportBold}
                             size={30}
                             w={28}
                             h={12}
                             direction={'row'}
-                             />
-                        
+                          />
+
                           <IconButton
                             title={'Print'}
                             Icon={HiPrinter}
@@ -110,7 +105,7 @@ export default function PurchaseRefund() {
                             h={12}
                             direction={'row'}
                           />
-                        
+
                           <IconButton
                             title={'Clear'}
                             Icon={AiOutlineClear}
@@ -127,19 +122,20 @@ export default function PurchaseRefund() {
                         {/* section-1 */}
                         <div className='border-2  p-6 rounded-xl justify-center items-center ' >
                           <div className='flex flex-row '>
-                            <span className='m-3'>Refrence</span>
+                            <span className='m-3'>R_Id</span>
                             <CustomInput height={35} />
-                            <span className='m-3'>Refrence</span>
+                            <span className='m-3'>R_Date</span>
 
                             <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
                                       shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
                               <DatePicker selected={selectedDate} onChange={handleDateChange} />
                             </span>
-                            <span className='m-3'>Refrence</span>
+                            <span className='m-3'>Supplier_Id</span>
                             <CustomInput height={35} />
-                            <span className='m-3'>Refrence</span>
+                            <span className='m-3'>Supplier_Name</span>
                             <CustomInput height={35} />
                           </div>
+
                           <div className='flex flex-row mt-2'>
                             <span className='m-3'>Refrence</span>
                             <CustomInput height={35} />
@@ -150,6 +146,7 @@ export default function PurchaseRefund() {
                             <span className='m-3'>Billty#</span>
                             <CustomInput height={35} />
                           </div>
+
                           <div className='flex flex-row mt-2'>
 
                             <span className='m-3'>C/Adda</span>

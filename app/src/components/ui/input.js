@@ -2,10 +2,12 @@ import React from 'react';
 
 import { handleChange } from "../../hooks/handleChange";
 
-export default function CustomInput({ placeholder, type, field, value, onChange, required, height ,readOnly}) {
-
+export default function CustomInput({ placeholder, type, field, value, onChange, required, height ,readOnly,width}) {
+   
+  const wd = width ===undefined?'full':width;
+  
   const checkbox = 'w-5 h-5 mt-2 ml-10';
-  const defaultField = `block w-full rounded-md border-2  border-gray-300 py-1.5 shadow-sm placeholder:text-gray-400 px-2 ml-2`
+  const defaultField = `block w-${wd} rounded-md border-2  border-gray-300 py-1.5 shadow-sm placeholder:text-gray-400 px-2 ml-2`
 
   const isCheckBox = type === 'checkbox';
 

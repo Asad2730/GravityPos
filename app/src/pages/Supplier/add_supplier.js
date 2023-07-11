@@ -3,18 +3,12 @@ import Table from '../../components/table/table';
 import CustomInput from '../../components/ui/input';
 import { secondary_color } from '../../utils/colors';
 import CustomDropDown from '../../components/ui/dropDown';
-import SideNav from '../../components/navbar/sideNavBar';
-import { supplier_navigation_items } from '../../components/navbar/navBarItems';
-
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import { PiExportBold } from 'react-icons/pi';
 import { HiPrinter } from 'react-icons/hi';
-
-
 import IconButton from '../../components/ui/iconButton';
-
-import 'react-datepicker/dist/react-datepicker.css';
-
+import { useState } from 'react';
+import { FormItems } from '../../components/ui/formItem';
 
 
 
@@ -64,11 +58,17 @@ const th = [
 
 export default function AddSupplier() {
 
-
+  const [formValues, setFormValues] = useState({
+    code: '', address: '', ntnNo: '',
+    alias: '', city: '', bankName: '',
+    supplier_Name: '', area: '', accountTitle: '',
+    phoneNo: '', subArea: '', account: '',
+    email: '', route: '', companyName: '', sales_Tax_No: '',
+  });
 
   return (
     <>
-      <div className='flex flex-row'>
+      <div className='flex flex-row overflow-y-hidden'>
         <div className='w-auto'>
           <div className='flex flex-col'>
             <div className='flex flex-row'>
@@ -77,10 +77,6 @@ export default function AddSupplier() {
 
 
                   <div className='flex flex-row'>
-
-                    {/* <div className='py-6' style={{ background: secondary_color }}>
-                      <SideNav navigation={supplier_navigation_items} />
-                    </div> */}
 
                     <div className='flex flex-col  py-6 pr-6'>
 
@@ -122,125 +118,26 @@ export default function AddSupplier() {
                         </div>
                       </div>
 
-                      <div className='flex flex-row ml-4 justify-between'>
-                        <div className='flex flex-col gap-y-3 my-2 space-x-2'>
-                          <div className='flex flex-row'>
-                            <h1 className='m-1'>Code</h1>
-                            <CustomInput height={35} />
-                          </div>
 
-                          <div className='flex flex-row'>
-                            <h2 className='m-1'>Alias</h2>
-                            <CustomInput height={35} />
-                          </div>
+                      <div className='flex flex-row  justify-between'>
 
-                          <div className='flex flex-row'>
-                            <h2 className='m-1'>First_Name</h2>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <h2 className='m-1'>Last_Name</h2>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span >Phone#</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>E_Mail</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Company_Name</span>
-                            <CustomInput height={35} />
-                          </div>
-                        </div>
-
-                        <div className='flex flex-col gap-y-3 '>
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Route</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Area</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Sub_Area</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>City</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Address</span>
-                            <CustomInput height={35} />
-                          </div>
+                        <div className='grid grid-cols-3 ml-4'>
+                          <FormItems 
+                            form={formValues}
+                            setForm={setFormValues} />
 
                           <div className='flex flex-row'>
                             <span className='m-1'>Status</span>
-                             <CustomDropDown/>
-                          </div>
-                        </div>
-
-                        {/* <div className='flex flex-col gap-y-3'>
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Sale_Person</span>
-                            <CustomInput height={35} />
+                            <span className='ml-16'><CustomDropDown /></span>
                           </div>
 
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Sale_Price</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Disc%</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <h2>Sales_Tax_No.</h2>
-                            <CustomInput height={35} />
-                          </div>
-                        </div> */}
-
-                        <div className='flex flex-col gap-y-3'>
-
-                          <div className='flex flex-row '>
-                            <span className='m-1 w-32 '>NTN_No.</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Bank_Name</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Account_Title</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Account#</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
+                          <div className='flex flex-row mt-1'>
                             <CustomInput type={'checkbox'} />
-                            <span className='ml-4'>Search_by_generic</span>
+                            <span className='ml-3 mt-[0.4rem]'>Search_by_generic</span>
                           </div>
+
                         </div>
+
                       </div>
 
                       <div className='flex w-full items-center justify-between mb-5'>
@@ -252,7 +149,7 @@ export default function AddSupplier() {
 
 
 
-                    
+
                   </div>
                 </div>
               </div>

@@ -4,16 +4,15 @@ import CustomInput from '../../components/ui/input';
 import { secondary_color } from '../../utils/colors';
 import CustomDropDown from '../../components/ui/dropDown';
 import SideNav from '../../components/navbar/sideNavBar';
-import { stock_navigation_items, supplier_navigation_items } from '../../components/navbar/navBarItems';
-
+import { stock_navigation_items } from '../../components/navbar/navBarItems';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import { PiExportBold } from 'react-icons/pi';
 import { HiPrinter } from 'react-icons/hi';
-
-
 import IconButton from '../../components/ui/iconButton';
-
 import 'react-datepicker/dist/react-datepicker.css';
+import { useState } from 'react';
+import { FormItems } from '../../components/ui/formItem';
+
 
 
 
@@ -70,7 +69,30 @@ const th = [
 
 
 
-export default function Stock() {
+export default function AddStock() {
+
+  const [formValues, setFormValues] = useState({
+
+    'Code': '',
+    'Product Name': '',
+    'Description': '',
+    'Category': '',
+    'Barcode': '',
+    'Manufacturer': '',
+    'Supplier Name': '',
+    'Quantity Being Added': '',
+    'Pack Size': '',
+    'Discount': '',
+    'unit price': '',
+    'Warehouse': '',
+    'ShelfLocation': '',
+    'Shelf': '',
+    'Batch No#': '',
+    'NDC(National Drug Code)': '',
+    'ATC Code(Anatomical Therapeutic Chemical Classification System)': '',
+    'expiry date': '',
+    'Date Received': '',
+  });
 
 
 
@@ -79,13 +101,12 @@ export default function Stock() {
       <div className='flex flex-row'>
         <div className='w-auto'>
           <div className='flex flex-col'>
-            <div className='flex flex-row'>
-              <div className='w-screen flex flex-col h-[52rem] ' style={{ backgroundColor: secondary_color }}>
+            <div className='flex flex-row '>
+              <div className='flex flex-col h-[52rem] ' style={{ backgroundColor: secondary_color }}>
                 <div className='flex flex-col'>
 
-
                   <div className='flex flex-row'>
-
+                    
                     <div className='py-6' style={{ background: secondary_color }}>
                       <SideNav navigation={stock_navigation_items} />
                     </div>
@@ -130,7 +151,26 @@ export default function Stock() {
                         </div>
                       </div>
 
-                      <div className='flex flex-row ml-4 justify-evenly'>
+                      <div className='grid grid-cols-3 ml-4 gap-3'>
+                        <FormItems
+                          form={formValues}
+                          setForm={setFormValues} 
+                          width={64}
+                          />
+                         
+                         <div className='flex flex-row'>
+                            <span className='m-1 mt-4'>Status</span>
+                            <span className='ml-28'><CustomDropDown /></span>
+                          </div>
+                            
+                        
+                          <div className='flex flex-row mt-1'>
+                            <CustomInput type={'checkbox'} />
+                            <span className='ml-3 mt-[0.4rem]'>Search_by_generic</span>
+                          </div>  
+                      </div>
+
+                      {/* <div className='flex flex-row ml-4 justify-evenly'>
 
                         <div className='flex flex-col gap-y-3 my-2 space-x-2'>
                           <div className='flex flex-row'>
@@ -209,7 +249,7 @@ export default function Stock() {
 
                         <div className='flex flex-col gap-y-3 my-2 space-x-2'>
                           <div className='flex flex-row'>
-                            <h1 className='m-1'>"Batch_No#",</h1>
+                            <h1 className='m-1'>Batch_No#</h1>
                             <CustomInput height={35} />
                           </div>
 
@@ -244,7 +284,7 @@ export default function Stock() {
 
                         </div>
 
-                      </div>
+                      </div> */}
 
                       <div className='flex w-full items-center justify-between mb-5'>
                         <div className='w-screen'>
@@ -252,10 +292,6 @@ export default function Stock() {
                         </div>
                       </div>
                     </div>
-
-
-
-
                   </div>
                 </div>
               </div>

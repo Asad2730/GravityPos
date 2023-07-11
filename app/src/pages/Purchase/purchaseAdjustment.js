@@ -105,13 +105,16 @@ export default function PurchaseAdjustment() {
                                                     </div>
                                                 </div>
                                                 {/* end of first section */}
-
+                                                     
+                                                     <div className='flex flex-row mt-6'>
+                                                     <span className='ml-4'>Action</span>
+                                                        <CustomDropDown />
+                                                     </div>
 
                                                 {/* start of section 2 */}
                                                 <div className='border-2 border-black p-5 rounded-xl mt-3 justify-center items-center'>
                                                     <div className='flex flex-row mt-6'>
-                                                        <span className='ml-4'>Action</span>
-                                                        <CustomDropDown />
+                                                       
                                                         <span className='ml-4'>Code</span>
                                                         <CustomInput height={35} />
                                                         <span className='ml-4'>Name</span>

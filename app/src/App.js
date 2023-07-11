@@ -5,13 +5,14 @@ import './index.css'
 import Login from './pages/login';
 import Home from './pages/home';
 import AddPurchase from './pages/Purchase/addpurchase';
-import Stock from './pages/Stock/stock';
+import AddStock from './pages/Stock/addstock';
 import PurchaseAdjustment from './pages/Purchase/purchaseAdjustment';
 import PurchaseOrder from './pages/Purchase/purchaseOrder';
 import PurchaseRefund from './pages/Purchase/purchaseRefund';
 import AddSupplier from './pages/Supplier/add_supplier';
 import Sale from './pages/Sale/sale';
 import Stock_Increase_Decrease from './pages/Stock/increase_decrease';
+import SalesReport from './pages/reports/salesReport';
 
 
 function App() {
@@ -27,10 +28,10 @@ function App() {
           <Route path='/PurchaseRefund' element={<PurchaseRefund/>}/>
           <Route path='/PurchaseAdjustment' element={<PurchaseAdjustment/>}/>
           <Route path='/purchaseOrder' element={<PurchaseOrder/>}/>
-          <Route path='/stock' element={<Stock/>}/>  
+          <Route path='/addstock' element={<AddStock/>}/>  
           <Route path='/Stock_Increase_Decrease' element={<Stock_Increase_Decrease/>}/>
           <Route path='/addSupplier' element={<AddSupplier/>}/>  
-          
+          <Route path='/salesReport' element={<SalesReport/>}/>
           </Route>
         </Routes>
      </BrowserRouter>
