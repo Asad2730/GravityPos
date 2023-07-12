@@ -3,10 +3,9 @@ import Table from '../../components/table/table';
 import CustomInput from '../../components/ui/input';
 import { secondary_color } from '../../utils/colors';
 import CustomDropDown from '../../components/ui/dropDown';
-import SideNav from '../../components/navbar/sideNavBar';
-import { sale_navigation_items } from '../../components/navbar/navBarItems';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { FormItems } from '../../components/ui/formItem';
 
 
 
@@ -52,6 +51,8 @@ export default function Sale() {
 
   const [selectedDate, setSelectedDate] = useState(new Date());
 
+
+
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
@@ -72,6 +73,23 @@ export default function Sale() {
   }, []);
 
 
+  // const [formValues, setFormValues] = useState({
+  //   R_Id: '',
+  //   Ref: '',
+  //   Client_Type: '',
+  //   Client_Name: '',
+  //   Sale_Person: '',
+  //   Code: '',
+  //   Name: '',
+  //   Bonus: '',
+  //   Qty: '',
+  //   Expiry_Date: '',
+  //   Batch: '',
+  //   GoDown: '',
+  //   Disc: '',
+  //   Rate: ''
+  // });
+
   return (
     <>
       <div className='flex flex-row'>
@@ -82,9 +100,7 @@ export default function Sale() {
                 <div className='flex flex-col justify-center items-center'>
                   <div className='flex flex-row'>
 
-                    {/* <div className='py-6' style={{ background: secondary_color }}>
-                      <SideNav navigation={sale_navigation_items} />
-                    </div> */}
+
 
                     <div className='flex flex-col py-6 pr-6'>
 
@@ -93,7 +109,11 @@ export default function Sale() {
                         <h1 className='text-2xl font-bold p-6 '>Stock Increase Decrease</h1>
                       </div>
 
+                      <div className='flex flex-row  justify-between'>
 
+                    
+
+                      </div>
 
                       <div className='flex flex-col ml-4'>
 
