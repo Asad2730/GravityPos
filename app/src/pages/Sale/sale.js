@@ -76,11 +76,11 @@ export default function Sale() {
 
                     <div className='flex flex-col py-6 pr-6'>
 
-                      <div className='p-2 flex  justify-items-start'>
-                        <h1 className='text-2xl font-bold p-6 '>Stock Increase Decrease</h1>
+                      <div className='p-2 flex '>
+                        <h1 className='text-2xl font-bold p-6 '>Sale Refund</h1>
                       </div>                    
 
-                      <div className='flex flex-row '>
+                      <div className='flex flex-row ml-6'>
                      
                           <div className='grid grid-cols-3 gap-1'>
                             <FormItems

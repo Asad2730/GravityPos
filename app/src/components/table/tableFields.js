@@ -12,7 +12,7 @@ function TableFields({tableheaders, tableRows}) {
 
   return (
     <div className='h-52 '> 
-      <table className="min-w-full divide-y bg-white">
+      <table className="divide-y bg-white table-auto">
         <thead className='sticky top-0'>
           <tr className="divide-x divide-gray-200">
             {tableheaders.map((i) => (

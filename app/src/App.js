@@ -27,50 +27,55 @@ import StockInHandReport from './pages/reports/stock/stockinhandreport';
 import ListOfVenderReport from './pages/reports/suppler/listofvenderreport';
 import NarcoticsDrugRreport from './pages/reports/sale/narcoticsdrugsreport';
 import NarcoticsAdjustmentReport from './pages/reports/purchase/purchaseadjustmentreport';
+import Test from './test';
 
 
+
+const CustomNav = ()=>{
+  <BrowserRouter>
+  <Routes>
+    <Route path='/' element={<Login/>}/>    
+    
+    <Route element={<NavBar/>}>
+    <Route path='/home' element={<Home/>}/>
+    <Route path='/sale' element={ <Sale/>}/>   
+    <Route path='/purchase' element={<AddPurchase/>}/>  
+    <Route path='/PurchaseRefund' element={<PurchaseRefund/>}/>
+    <Route path='/PurchaseAdjustment' element={<PurchaseAdjustment/>}/>
+    <Route path='/purchaseOrder' element={<PurchaseOrder/>}/>
+    <Route path='/addstock' element={<AddStock/>}/>  
+    <Route path='/Stock_Increase_Decrease' element={<Stock_Increase_Decrease/>}/>
+    <Route path='/addSupplier' element={<AddSupplier/>}/>  
+
+    <Route path='/salesReport' element={<SalesReport/>}/>
+    <Route path='/billReport' element={<BillPaymentReport/>}/>
+    <Route path='/saleReturn' element={<SaleReturnReport/>}/>
+    <Route path='/soldItemReport' element={<SoldItemReport/>}/>
+    <Route path='/NarcoticsDrugRreport' element={<NarcoticsDrugRreport/>}/>
+
+    <Route path='/purchaseReport' element={<PurchaseReport/>}/>
+    <Route path='/narcoticsAdjustmentReport' element={<NarcoticsAdjustmentReport/>}/>
+    <Route path='/purchaseReturnReport' element={<PurchaseReturnReport/>}/>
+
+    <Route path='/stockReport' element={<StockReport/>}/>
+    <Route path='/productReport' element={<ProductReport/>}/>
+    <Route path='/expiryProductReport' element={<ExpiryProductReport/>}/>
+    <Route path='/shortItemListReport' element={<ShortItemListReport/>}/>
+    <Route path='/stockInHandReport' element={<StockInHandReport/>}/>
+
+    <Route path='/listOfVenderReport' element={<ListOfVenderReport/>}/>
+
+    </Route>
+  </Routes>
+</BrowserRouter>
+}
 
 function App() {
   return (
-   <>
-     <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Login/>}/>    
-          
-          <Route element={<NavBar/>}>
-          <Route path='/home' element={<Home/>}/>
-          <Route path='/sale' element={ <Sale/>}/>   
-          <Route path='/purchase' element={<AddPurchase/>}/>  
-          <Route path='/PurchaseRefund' element={<PurchaseRefund/>}/>
-          <Route path='/PurchaseAdjustment' element={<PurchaseAdjustment/>}/>
-          <Route path='/purchaseOrder' element={<PurchaseOrder/>}/>
-          <Route path='/addstock' element={<AddStock/>}/>  
-          <Route path='/Stock_Increase_Decrease' element={<Stock_Increase_Decrease/>}/>
-          <Route path='/addSupplier' element={<AddSupplier/>}/>  
-
-          <Route path='/salesReport' element={<SalesReport/>}/>
-          <Route path='/billReport' element={<BillPaymentReport/>}/>
-          <Route path='/saleReturn' element={<SaleReturnReport/>}/>
-          <Route path='/soldItemReport' element={<SoldItemReport/>}/>
-          <Route path='/NarcoticsDrugRreport' element={<NarcoticsDrugRreport/>}/>
-
-          <Route path='/purchaseReport' element={<PurchaseReport/>}/>
-          <Route path='/narcoticsAdjustmentReport' element={<NarcoticsAdjustmentReport/>}/>
-          <Route path='/purchaseReturnReport' element={<PurchaseReturnReport/>}/>
-
-          <Route path='/stockReport' element={<StockReport/>}/>
-          <Route path='/productReport' element={<ProductReport/>}/>
-          <Route path='/expiryProductReport' element={<ExpiryProductReport/>}/>
-          <Route path='/shortItemListReport' element={<ShortItemListReport/>}/>
-          <Route path='/stockInHandReport' element={<StockInHandReport/>}/>
-
-          <Route path='/listOfVenderReport' element={<ListOfVenderReport/>}/>
-
-          </Route>
-        </Routes>
-     </BrowserRouter>
+   <> 
+     <Test/>
    </>
-  );
+  )
 }
 
 

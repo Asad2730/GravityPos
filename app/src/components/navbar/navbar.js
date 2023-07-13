@@ -46,6 +46,7 @@ export default function NavBar() {
             </div>
 
           </div>
+          
           <Outlet/> 
           
 
