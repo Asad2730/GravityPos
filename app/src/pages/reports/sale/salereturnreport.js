@@ -49,17 +49,16 @@ const th = [
 export default function SaleReturnReport() {
 
     const [formValues, setFormValues] = useState({
-
-        'Code': '',
-        'Sale Code': '',
-        'start Date': '',
-        'end Date': '',
-        'Supplier Code': '',
-        'Supplier Name': '',
-        'manufacture': '',
-        'product Name': '',
+        code: { value: '', type: 'text', readonly: false },
+        saleCode: { value: '', type: 'text', readonly: false },
+        startDate: { value: '', type: 'date', readonly: false },
+        endDate: { value: '', type: 'date', readonly: false },
+        supplierCode: { value: '', type: 'text', readonly: false },
+        supplierName: { value: '', type: 'text', readonly: false },
+        manufacture: { value: '', type: 'text', readonly: false },
+        productName: { value: '', type: 'text', readonly: false },
     });
-
+    
 
 
     return (

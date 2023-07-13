@@ -25,6 +25,8 @@ import ExpiryProductReport from './pages/reports/stock/expiryproductreport';
 import ShortItemListReport from './pages/reports/stock/shortitemlistreport';
 import StockInHandReport from './pages/reports/stock/stockinhandreport';
 import ListOfVenderReport from './pages/reports/suppler/listofvenderreport';
+import NarcoticsDrugRreport from './pages/reports/sale/narcoticsdrugsreport';
+import NarcoticsAdjustmentReport from './pages/reports/purchase/purchaseadjustmentreport';
 
 
 
@@ -50,10 +52,10 @@ function App() {
           <Route path='/billReport' element={<BillPaymentReport/>}/>
           <Route path='/saleReturn' element={<SaleReturnReport/>}/>
           <Route path='/soldItemReport' element={<SoldItemReport/>}/>
-          <Route path='/billPaymentReport' element={<BillPaymentReport/>}/>
+          <Route path='/NarcoticsDrugRreport' element={<NarcoticsDrugRreport/>}/>
 
           <Route path='/purchaseReport' element={<PurchaseReport/>}/>
-          <Route path='/purchaseAdjustment' element={<PurchaseAdjustmentReport/>}/>
+          <Route path='/narcoticsAdjustmentReport' element={<NarcoticsAdjustmentReport/>}/>
           <Route path='/purchaseReturnReport' element={<PurchaseReturnReport/>}/>
 
           <Route path='/stockReport' element={<StockReport/>}/>

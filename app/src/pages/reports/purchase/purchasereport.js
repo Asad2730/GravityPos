@@ -46,16 +46,16 @@ const th = [
 export default function PurchaseReport() {
 
     const [formValues, setFormValues] = useState({
-
-        'Code': '',
-        'Sale Code': '',
-        'start Date': '',
-        'end Date': '',
-        'Supplier Code': '',
-        'Supplier Name': '',
-        'manufacture': '',
-        'product Name': '',
+        'Code': { value: '', type: 'text', readonly: false },
+        'Sale Code': { value: '', type: 'text', readonly: false },
+        'start Date': { value: '', type: 'date', readonly: false },
+        'end Date': { value: '', type: 'date', readonly: false },
+        'Supplier Code': { value: '', type: 'text', readonly: false },
+        'Supplier Name': { value: '', type: 'text', readonly: false },
+        'manufacture': { value: '', type: 'text', readonly: false },
+        'product Name': { value: '', type: 'text', readonly: false },
     });
+    
 
 
 

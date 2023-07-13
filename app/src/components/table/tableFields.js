@@ -20,7 +20,7 @@ function TableFields({tableheaders, tableRows}) {
                 style={{
                   backgroundColor:primary_color 
                 }}
-                className="py-3.5 pl-4 pr-4 text-left text-sm font-semibold sm:pl-0 w-full">
+                className="py-3.5 pl-4 pr-4 text-left text-sm font-semibold sm:pl-0">
                 <span className='text-white m-4 whitespace-nowrap'>
                   {i}
                 </span>

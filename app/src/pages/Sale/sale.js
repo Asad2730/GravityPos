@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Table from '../../components/table/table';
-import CustomInput from '../../components/ui/input';
 import { secondary_color } from '../../utils/colors';
-import CustomDropDown from '../../components/ui/dropDown';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import { FormItems } from '../../components/ui/formItem';
 
 
@@ -46,49 +42,27 @@ const th = [
 
 export default function Sale() {
 
-
-  const [currentTime, setCurrentTime] = useState('');
-
-  const [selectedDate, setSelectedDate] = useState(new Date());
-
-
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const time = new Date().toLocaleTimeString('en-US', {
-        timeZone: 'Asia/Karachi',
-        hour12: true,
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric'
-      });
-      setCurrentTime(time);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+    
+  const [formInitialValues,setFormValues] = useState({
+    R_Id: { value: '', type: 'text', readonly: false },
+    date: { value: '', type: 'date', readonly: false },
+    Ref: { value: '', type: 'text', readonly: false },
+    Client_Type: { value: '', type: 'ddl', readonly: false },
+    Client_Name: { value: '', type: 'text', readonly: false },
+    Sale_Person: { value: '', type: 'text', readonly: false },
+    Code: { value: '', type: 'text', readonly: false },
+    Name: { value: '', type: 'text', readonly: false },
+    Bonus: { value: '', type: 'text', readonly: false },
+    Qty: { value: '', type: 'text', readonly: false },
+    Expiry_Date: { value: '', type: 'text', readonly: false },
+    Batch: { value: '', type: 'text', readonly: false },
+    GoDown: { value: '', type: 'text', readonly: false },
+    Disc: { value: '', type: 'text', readonly: false },
+    Rate: { value: '', type: 'text', readonly: false }
+});
 
 
-  // const [formValues, setFormValues] = useState({
-  //   R_Id: '',
-  //   Ref: '',
-  //   Client_Type: '',
-  //   Client_Name: '',
-  //   Sale_Person: '',
-  //   Code: '',
-  //   Name: '',
-  //   Bonus: '',
-  //   Qty: '',
-  //   Expiry_Date: '',
-  //   Batch: '',
-  //   GoDown: '',
-  //   Disc: '',
-  //   Rate: ''
-  // });
+
 
   return (
     <>
@@ -100,91 +74,31 @@ export default function Sale() {
                 <div className='flex flex-col justify-center items-center'>
                   <div className='flex flex-row'>
 
-
-
                     <div className='flex flex-col py-6 pr-6'>
-
 
                       <div className='p-2 flex  justify-items-start'>
                         <h1 className='text-2xl font-bold p-6 '>Stock Increase Decrease</h1>
+                      </div>                    
+
+                      <div className='flex flex-row '>
+                     
+                          <div className='grid grid-cols-3 gap-1'>
+                            <FormItems
+                              form={formInitialValues}
+                              setForm={setFormValues} 
+                              width={18}
+                              />
+                          </div>                                              
+
                       </div>
-
-                      <div className='flex flex-row  justify-between'>
-
-                    
-
-                      </div>
-
-                      <div className='flex flex-col ml-4'>
-
-
-                        <div className='flex flex-row '>
-
-                          <span className='m-3'>R_Id</span>
-                          <CustomInput height={35} />
-
-
-                          <span className='m-3'>R_Date</span>
-                          <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
-                                      shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
-                            <DatePicker selected={selectedDate} onChange={handleDateChange} />
-                          </span>
-                          <CustomInput
-                            readOnly={false}
-                            value={currentTime}
-                            height={35}
-                          />
-
-
-                          <span className='m-3'>Ref#</span>
-                          <CustomInput height={35} />
-
-                        </div>
-
-                        <div className='flex flex-row mt-2'>
-                          <span className='m-3'>Client_Type</span>
-                          <CustomDropDown />
-                          <span className='m-3'>Client_Name</span>
-                          <CustomInput height={35} />
-                          <span className='m-3'>Sale_Person</span>
-                          <CustomInput height={35} />
-                        </div>
-                        <div className='flex flex-row mt-2'>
-                          <span className='m-3'>Code</span>
-                          <CustomInput height={35} />
-                          <span className='m-3'>Name</span>
-                          <CustomInput height={35} />
-                          <span className='m-3'>Bonus</span>
-                          <CustomInput height={35} />
-                          <span className='m-3'>Qty</span>
-                          <CustomInput height={35} />
-
-                          <span className='m-3'>Expiry_Date</span>
-                          <CustomInput height={35} />
-                          <span className='m-3'>Batch#</span>
-                          <CustomInput height={35} />
-
-
-                        </div>
-                        <div className='flex flex-row mt-2'>
-                          <span className='m-3'>GoDown</span>
-                          <CustomDropDown />
-                          <span className='m-3'>Disc%</span>
-                          <CustomInput height={35} />
-                          <span className='m-3'>Rate</span>
-                          <CustomInput height={35} />
-
-
-                        </div>
-                      </div>
-
+                     
                       <div className='flex w-full items-center justify-between mb-5'>
                         <div className='w-full'>
                           <Table th={th} tr={tr} />
                         </div>
                       </div>
                     </div>
-
+                   
                   </div>
 
                 </div>

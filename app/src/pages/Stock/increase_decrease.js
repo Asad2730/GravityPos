@@ -11,6 +11,8 @@ import { stock_navigation_items } from '../../components/navbar/navBarItems';
 import IconButton from '../../components/ui/iconButton';
 
 import 'react-datepicker/dist/react-datepicker.css';
+import { useState } from 'react';
+import { FormItems } from '../../components/ui/formItem';
 
 
 
@@ -58,6 +60,24 @@ const th = [
 
 export default function Stock_Increase_Decrease() {
 
+  const [formInitialValues, setFormValues] = useState({
+    Code: { value: '', type: 'text', readonly: false },
+    Product_Name: { value: '', type: 'text', readonly: false },
+    Category: { value: '', type: 'text', readonly: false },
+    Barcode_QR_code: { value: '', type: 'text', readonly: false },
+    Manufacturer_company: { value: '', type: 'text', readonly: false },
+    Supplier_Name: { value: '', type: 'text', readonly: false },
+    Pack_Size: { value: '', type: 'number', readonly: false },
+    Unit_Price: { value: '', type: 'number', readonly: false },
+    Batch_No: { value: '', type: 'text', readonly: false },
+    Expiry_Date: { value: '', type: 'date', readonly: false },
+    Date_Received: { value: '', type: 'date', readonly: false },
+    Total_Quantity: { value: '', type: 'number', readonly: false },
+    Increase_Quantity: { value: '', type: 'number', readonly: false },
+    Decrease_Status: { value: '', type: 'ddl', readonly: false },
+    Quantity_Being_Added: { value: '', type: 'number', readonly: false },
+    Search_by_generic: { value: '', type: 'checkbox', readonly: false },
+});
 
 
   return (
@@ -85,105 +105,13 @@ export default function Stock_Increase_Decrease() {
                         </div>
 
                       </div>
-
-                      <div className='flex flex-row ml-4 justify-between'>
-                      
-                        <div className='flex flex-col gap-y-3 my-2 space-x-2'>
-                          <div className='flex flex-row'>
-                            <h1 className='m-1'>Code</h1>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <h2 className='m-1'>Product Name</h2>
-                            <CustomInput height={35} />
-                          </div>
-                     
-                          <div className='flex flex-row'>
-                            <h2 className='m-1'>Category</h2>
-                            <CustomInput height={35} />
-                          </div>
-                          <div className='flex flex-row'>
-                            <h2 className='m-1'>Barcode/QR code</h2>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <h2 className='m-1'>Manufacturer/company</h2>
-                            <CustomInput height={35} />
-                          </div>
-
-                        </div>
-
-                        <div className='flex flex-col gap-y-3 my-2 space-x-2'>
-
-                          <div className='flex flex-row'>
-                            <h2 className='m-1'>Supplier Name</h2>
-                            <CustomInput height={35} />
-                          </div>
-
-                          
-
-                          <div className='flex flex-row'>
-                            <h2 className='m-1'>Pack_Size</h2>
-                            <CustomInput height={35} />
-                          </div>
-
-                     
-
-                          <div className='flex flex-row'>
-                            <h1 className='m-1'>unit_price</h1>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <h1 className='m-1'>"Batch_No#",</h1>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <h2 className='m-1'>expiry_date</h2>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Date Received</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                        </div>
-
-
-                        <div className='flex flex-col gap-y-3 my-2 space-x-2'>
-
-                        <div className='flex flex-row'>
-                            <span className='m-1'>Total_Quantity</span>
-                            <CustomInput height={35} />
-                          </div>
-                         
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Increase_Quantity</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Decrease_Status</span>
-                            <CustomDropDown />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <h2 className='m-1'>Quantity Being Added</h2>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row'>
-                            <CustomInput type={'checkbox'} />
-                            <span className='ml-4'>Search_by_generic</span>
-                          </div>
-
-                        </div>
-
+                       
+                      <div className='grid grid-cols-3  ml-4 gap-3'>
+                        <FormItems
+                          form={formInitialValues}
+                          setForm={setFormValues} 
+                          width={18}
+                          />
                       </div>
 
                       <div className='flex w-full items-center justify-between mb-5'>

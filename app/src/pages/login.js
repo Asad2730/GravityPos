@@ -10,10 +10,12 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   
   const navigate = useNavigate();
+
   const [formValues, setFormValues] = useState({
-   name:'',
-   password:'',
-  });
+    name: { value: ''},
+    password: { value: ''},
+});
+
 
 
   const submit = async()=>{
@@ -21,8 +23,7 @@ export default function Login() {
      navigate('/home')
     if(isFormValid){
        try{
-       
-      
+
        }catch(error){
         console.log(error)
        }
@@ -55,7 +56,7 @@ export default function Login() {
                       type={'text'}
                       required={true}
                       onChange={setFormValues}
-                      value={formValues.name}  
+                      value={formValues.name.value}  
                       field={'name'}                 
                     />
                     </div>
@@ -69,7 +70,7 @@ export default function Login() {
                        type={'password'}
                        required={true}
                        onChange={setFormValues} 
-                       value={formValues.password}
+                       value={formValues.password.value}
                        field={'password'}  
                       />
                     </div>

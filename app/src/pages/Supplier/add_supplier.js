@@ -1,8 +1,6 @@
 
 import Table from '../../components/table/table';
-import CustomInput from '../../components/ui/input';
 import { secondary_color } from '../../utils/colors';
-import CustomDropDown from '../../components/ui/dropDown';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import { PiExportBold } from 'react-icons/pi';
 import { HiPrinter } from 'react-icons/hi';
@@ -58,13 +56,27 @@ const th = [
 
 export default function AddSupplier() {
 
-  const [formValues, setFormValues] = useState({
-    code: '', address: '', ntnNo: '',
-    alias: '', city: '', bankName: '',
-    supplier_Name: '', area: '', accountTitle: '',
-    phoneNo: '', subArea: '', account: '',
-    email: '', route: '', companyName: '', sales_Tax_No: '',
+  const [formInitialValues, setFormValues] = useState({
+    Code: { value: '', type: 'text', readonly: false },
+    Address: { value: '', type: 'text', readonly: false },
+    NtnNo: { value: '', type: 'text', readonly: false },
+    Alias: { value: '', type: 'text', readonly: false },
+    City: { value: '', type: 'text', readonly: false },
+    BankName: { value: '', type: 'text', readonly: false },
+    Supplier_Name: { value: '', type: 'text', readonly: false },
+    Area: { value: '', type: 'text', readonly: false },
+    AccountTitle: { value: '', type: 'text', readonly: false },
+    PhoneNo: { value: '', type: 'text', readonly: false },
+    SubArea: { value: '', type: 'text', readonly: false },
+    Account: { value: '', type: 'text', readonly: false },
+    Email: { value: '', type: 'email', readonly: false },
+    Route: { value: '', type: 'text', readonly: false },
+    CompanyName: { value: '', type: 'text', readonly: false },
+    Sales_Tax_No: { value: '', type: 'text', readonly: false },
+    Status: { value: '', type: 'ddl', readonly: false },
+    Search_by_generic: { value: '', type: 'checkbox', readonly: false },
   });
+
 
   return (
     <>
@@ -119,25 +131,15 @@ export default function AddSupplier() {
                       </div>
 
 
-                      <div className='flex flex-row  justify-between'>
-
-                        <div className='grid grid-cols-3 ml-4'>
-                          <FormItems 
-                            form={formValues}
-                            setForm={setFormValues} />
-
-                          <div className='flex flex-row'>
-                            <span className='m-1'>Status</span>
-                            <span className='ml-16'><CustomDropDown /></span>
-                          </div>
-
-                          <div className='flex flex-row mt-1'>
-                            <CustomInput type={'checkbox'} />
-                            <span className='ml-3 mt-[0.4rem]'>Search_by_generic</span>
-                          </div>
-
+                      <div className='flex flex-row  py-6 p-4'>
+                        <div className='grid grid-cols-3 gap-2'>
+                          <FormItems
+                            form={formInitialValues}
+                            setForm={setFormValues}
+                            width={64}
+                           
+                          />
                         </div>
-
                       </div>
 
                       <div className='flex w-full items-center justify-between mb-5'>

@@ -45,16 +45,16 @@ const th = [
 export default function SoldItemReport() {
 
     const [formValues, setFormValues] = useState({
-
-        'Code': '',
-        'Sale Code': '',
-        'start Date': '',
-        'end Date': '',
-        'Supplier Code': '',
-        'Supplier Name': '',
-        'manufacture': '',
-        'product Name': '',
+        Code: { value: '', type: 'text', readonly: false },
+        Sale_Code: { value: '', type: 'text', readonly: false },
+        Start_Date: { value: '', type: 'date', readonly: false },
+        End_Date: { value: '', type: 'date', readonly: false },
+        Supplier_Code: { value: '', type: 'text', readonly: false },
+        Supplier_Name: { value: '', type: 'text', readonly: false },
+        Manufacture: { value: '', type: 'text', readonly: false },
+        Product_Name: { value: '', type: 'text', readonly: false },
     });
+    
 
 
 

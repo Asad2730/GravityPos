@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import CustomInput from '../../components/ui/input';
+import React, { useState } from 'react'
 import { secondary_color } from '../../utils/colors';
 import SideNav from '../../components/navbar/sideNavBar';
 import { purchase_navigation_items } from '../../components/navbar/navBarItems';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import Table from '../../components/table/table';
 import { PiExportBold } from 'react-icons/pi';
 import { HiPrinter } from 'react-icons/hi';
 import { MdFileDownloadDone } from 'react-icons/md';
 import { AiOutlineClear } from 'react-icons/ai';
 import IconButton from '../../components/ui/iconButton';
+import { FormItems } from '../../components/ui/formItem';
 
 
 
@@ -50,11 +48,42 @@ const th = [
 
 
 export default function PurchaseRefund() {
-  const [selectedDate, setSelectedDate] = useState(new Date());
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
+  const [formInitialValues, setFormValues] = useState({
+    R_Id: { value: '', type: 'text', readonly: true },
+    R_Date: { value: '', type: 'date', readonly: true },
+    Supplier_Id: { value: '', type: 'text', readonly: true },
+    Supplier_Name: { value: '', type: 'text', readonly: true },
+    Refrence: { value: '', type: 'text', readonly: true },
+    Desc: { value: '', type: 'text', readonly: true },
+    Remarks: { value: '', type: 'text', readonly: true },
+    Billty: { value: '', type: 'text', readonly: true },
+    C_Adda: { value: '', type: 'text', readonly: true },
+    Code: { value: '', type: 'text', readonly: true },
+    Name: { value: '', type: 'text', readonly: true },
+    Batch: { value: '', type: 'text', readonly: true },
+    P_price: { value: '', type: 'text', readonly: true },
+    Pack: { value: '', type: 'text', readonly: true },
+    l_disc: { value: '', type: 'text', readonly: true },
+    l_gst: { value: '', type: 'text', readonly: true },
+    godown: { value: '', type: 'text', readonly: true },
+    bonus: { value: '', type: 'text', readonly: true },
+  });
+
+
+  const [form2InitialValues, setForm2Values] = useState({
+    Total_of_Item: { value: '', type: 'text', readonly: true },
+    Total_Bonus: { value: '', type: 'text', readonly: true },
+    Total_Qty: { value: '', type: 'text', readonly: true },
+    Item_Desc: { value: '', type: 'text', readonly: true },
+    Item_GST: { value: '', type: 'text', readonly: true },
+    
+    courier_AddaChanges: { value: '', type: 'text', readonly: true },
+    FlatDisc: { value: '', type: 'text', readonly: true },
+    FlatGst: { value: '', type: 'text', readonly: true },
+    Other_Changes: { value: '', type: 'text', readonly: true },
+    Return_Amount: { value: '', type: 'text', readonly: true },
+  });
 
   return (
     <>
@@ -120,65 +149,18 @@ export default function PurchaseRefund() {
                       <div className='flex flex-col ml-4 '>
 
                         {/* section-1 */}
+
                         <div className='border-2  p-6 rounded-xl justify-center items-center ' >
-                          <div className='flex flex-row '>
-                            <span className='m-3'>R_Id</span>
-                            <CustomInput height={35} />
-                            <span className='m-3'>R_Date</span>
+                          <div className='grid grid-cols-3 '>
+                            <FormItems
+                              form={formInitialValues}
+                              setForm={setFormValues}
+                              width={18}
 
-                            <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
-                                      shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
-                              <DatePicker selected={selectedDate} onChange={handleDateChange} />
-                            </span>
-                            <span className='m-3'>Supplier_Id</span>
-                            <CustomInput height={35} />
-                            <span className='m-3'>Supplier_Name</span>
-                            <CustomInput height={35} />
+                            />
                           </div>
-
-                          <div className='flex flex-row mt-2'>
-                            <span className='m-3'>Refrence</span>
-                            <CustomInput height={35} />
-                            <span className='m-3'>Desc</span>
-                            <CustomInput height={35} />
-                            <span className='m-3'>Remarks</span>
-                            <CustomInput height={35} />
-                            <span className='m-3'>Billty#</span>
-                            <CustomInput height={35} />
-                          </div>
-
-                          <div className='flex flex-row mt-2'>
-
-                            <span className='m-3'>C/Adda</span>
-                            <CustomInput height={35} />
-                            <span className='ml-4'> Code </span>
-                            <CustomInput height={35} />
-                            <span className='ml-4'>Name</span>
-                            <CustomInput height={35} />
-                            <span className='ml-4'>Batch#</span>
-                            <CustomInput height={35} />
-                          </div>
-                          <div className='flex flex-row mt-2'>
-
-                            <span className='ml-4'> P_price </span>
-                            <CustomInput height={35} />
-                            <span className='ml-4'> Pack </span>
-                            <CustomInput height={35} />
-                            <span className='ml-4'>l.dISC%</span>
-                            <CustomInput height={35} />
-                            <span className='ml-4'>l.gst</span>
-                            <CustomInput height={35} />
-                          </div>
-                          <div className='flex flex-row mt-2'>
-
-                            <span className='ml-4'> godown </span>
-                            <CustomInput height={35} />
-                            <span className='ml-4'> bonus </span>
-                            <CustomInput height={35} />
-
-                          </div>
-
                         </div>
+
 
                         {/* end of section-2 */}
 
@@ -190,44 +172,16 @@ export default function PurchaseRefund() {
                             />
 
                             {/* section-2 */}
-                            <div className='border-2  p-6 rounded-xl mt-5' >
-                              <div className='flex flex-row mt-6 justify-center items-center'>
-                                <span className='ml-4'>Total=of_Item</span>
-                                <CustomInput height={35} />
-                                <span className='ml-4'>Total_Bonus</span>
-                                <CustomInput height={35} />
-                                <span className='ml-4'> Total_Qty </span>
-                                <CustomInput height={35} />
-                                <span className='ml-4 '> Item_Desc% </span>
-                                <CustomInput height={35} />
-                                <span className='ml-4'>Item_GST</span>
-                                <CustomInput height={35} />
+                            <div className='flex flex-row  py-6' >
+                              <div className='grid grid-cols-3 gap-1'>
+                                <FormItems
+                                  form={form2InitialValues}
+                                  setForm={setForm2Values}
+                                  width={18}
+                                />
                               </div>
-
-                              <div className='flex flex-row mt-8 ml-60 justify-center items-center '>
-                                <span className='ml-4'>courier/AddaChanges</span>
-                                <CustomInput height={35} />
-                                <span className='ml-4'>FlatDisc%</span>
-                                <CustomInput height={35} />
-                                <span className='ml-4'> FlatGst </span>
-                                <CustomInput height={35} />
-
-                              </div>
-
-                              <div className='flex flex-row mt-8  ml-60  justify-center items-center'>
-
-                                <span className='ml-4 '> Other_Changes </span>
-                                <CustomInput height={35} />
-                                <span className='ml-4'>Return_Amount</span>
-                                <CustomInput height={35} />
-                              </div>
-
-
                             </div>
-
-
-
-
+                         
                             {/* end of section-2 */}
 
                           </div>

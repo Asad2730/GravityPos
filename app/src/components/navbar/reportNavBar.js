@@ -22,7 +22,7 @@ const navigation = [
       { name: 'sale report', href: '/salesReport' },
       { name: 'sold item report', href: '/soldItemReport' },
       { name: 'sale return report', href: '/saleReturn' },
-      { name: 'narcotics drugs report', href: '/billPaymentReport' },
+      { name: 'narcotics drugs report', href: '/NarcoticsDrugRreport' },
       { name: 'bill payment report', href: '/billReport' },
     ],
   },
@@ -34,7 +34,7 @@ const navigation = [
     children: [
       { name: 'purchase report', href: '/purchaseReport' },
       { name: 'purchase return report', href: '/purchaseReturnReport' },
-      { name: 'narcotics adjustment report', href: '/purchaseAdjustment' },
+      { name: 'narcotics adjustment report', href: '/narcoticsAdjustmentReport' },
     ],
   },
 

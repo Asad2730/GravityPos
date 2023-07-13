@@ -81,7 +81,9 @@ export default function Home() {
 
         return () => clearInterval(interval);
     }, []);
+ 
 
+    
 
     return (
         <>
