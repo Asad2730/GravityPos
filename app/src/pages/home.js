@@ -4,13 +4,15 @@ import CustomInput from '../components/ui/input';
 import IconButton from '../components/ui/iconButton';
 import { AiOutlineDelete, AiOutlineEdit, AiOutlineReload, AiOutlinePauseCircle } from "react-icons/ai";
 import { CiCircleRemove } from "react-icons/ci";
-import { secondary_color } from '../utils/colors';
+import {  secondary_color } from '../utils/colors';
 import { GiCancel } from "react-icons/gi";
 import { BsSendCheck } from "react-icons/bs";
 import CustomDropDown from '../components/ui/dropDown';
 import logo from '../assets/logo_normal.png';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import HomeFooter from '../components/footer/homeFooter';
+
 
 
 
@@ -56,11 +58,20 @@ const items = [
 
 const iconSize = 40;
 
+const iconBtns = [
+    {name:'Clear Sale',icon:AiOutlineDelete,w:40,h:28},
+    {name:'Cancel item',icon:GiCancel,w:40,h:28},
+    {name:'Return',icon:AiOutlineReload,w:40,h:28},
+    {name:'Edit',icon:AiOutlineEdit,w:40,h:28},
+    {name:'Hold',icon:AiOutlinePauseCircle,w:40,h:28},
+    {name:'Cancellation',icon:CiCircleRemove,w:40,h:28},
+    {name:'Pay',icon:BsSendCheck,w:60,h:28},
+]
 
 export default function Home() {
 
     const [currentTime, setCurrentTime] = useState('');
- 
+
     const [selectedDate, setSelectedDate] = useState(new Date());
 
     const handleDateChange = (date) => {
@@ -81,7 +92,8 @@ export default function Home() {
 
         return () => clearInterval(interval);
     }, []);
- 
+
+
 
     
 
@@ -89,7 +101,7 @@ export default function Home() {
         <>
             <div className='flex flex-col'>
                 <div className='flex flex-row '>
-                    <div className='w-[80%] h-[43rem] flex flex-col' style={{ backgroundColor: secondary_color }}>
+                    <div className=' h-[43rem] flex flex-col' style={{ backgroundColor: secondary_color }}>
                         <div className='flex flex-row justify-center items-center'>
                             <img src={logo} className='w-60 h-16 ml-5' />
                             <div className='flex flex-col mr-10 ml-4'>
@@ -104,7 +116,7 @@ export default function Home() {
                                     <h2 >Date & Time</h2>
 
                                     <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
-                                      shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{height:35}}>   
+                                      shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
                                         <DatePicker selected={selectedDate} onChange={handleDateChange} />
                                     </span>
                                     <CustomInput
@@ -162,152 +174,44 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex w-full items-center justify-between mb-5">
-                            <div className="">
+                        <div className="p-1">
+                            <div className="w-full">
                                 <Table
                                     th={th}
                                     tr={tr}
                                 />
                             </div>
                         </div>
+
+                        
                     </div>
-                    <div className='w-[20%] h-auto' style={{ backgroundColor: secondary_color }}>
-                        <div className='flex flex-row'>
-                            <IconButton
-                                Icon={AiOutlineDelete}
-                                title={'Clear Sale'}
-                                size={iconSize}
-                                w={40}
-                                h={28}
-                                direction={'col'}
-                            />
-                            <IconButton
-                                Icon={GiCancel}
-                                title={'Cancel Item'}
-                                size={iconSize}
-                                w={40}
-                                h={28}
-                                direction={'col'}
-                            />
-                        </div>
-                        <div className='flex flex-row'>
-                            <IconButton
-                                Icon={AiOutlineReload}
-                                title={'Return'}
-                                size={iconSize}
-                                w={40}
-                                h={28}
-                                direction={'col'}
+                    <div  style={{ backgroundColor: secondary_color }}>
+                     
+                     <div className='grid grid-cols-2'>
+                        {
+                            iconBtns.map((i)=>(
+                                <div className='flex flex-wrap'>                             
+                                <IconButton
+                                Icon={i.icon}
+                                title={i.name}
+                                 size={iconSize}
+                                 w={i.w}
+                                 h={i.h}
+                                direction={'col'}                             
+                               />
 
-                            />
-                            <IconButton
-                                Icon={AiOutlineEdit}
-                                title={'Edit'}
-                                size={iconSize}
-                                w={40}
-                                h={28}
-                                direction={'col'}
+                              </div>
+                            ))
+                        }
+                     </div>                                              
 
-                            />
-                        </div>
-                        <div className='flex flex-row'>
-                            <IconButton
-                                Icon={AiOutlinePauseCircle}
-                                title={'Hold'}
-                                size={iconSize}
-                                w={40}
-                                h={28}
-                                direction={'col'}
-                            />
-                            <IconButton
-                                Icon={CiCircleRemove}
-                                title={'Cancellation'}
-                                size={iconSize}
-                                w={40}
-                                h={28}
-                                direction={'col'}
-
-                            />
-                        </div>
-                        <div className='flex flex-row'>
-                            <IconButton
-                                Icon={BsSendCheck}
-                                title={'pay'}
-                                size={60}        
-                                w={'full'}
-                                h={28}
-                                direction={'col'}
-                            />
-                        </div>
-                    </div>
-
+                 </div>
+                
+                
                 </div>
 
-                <footer>
-                    <div className='flex flex-row h-[11.3rem] '>
-                        <div className='flex flex-col w-1/5'>
-                            <div className='flex flex-row  items-center justify-center m-2'>
-                                <span className='text-white w-40'>No of item</span>
-                                <CustomInput
-                                />
-                            </div>
-                            <div className='flex flex-row  items-center justify-center  m-2'>
-                                <span className='text-white w-40'> Total Qty </span>
-                                <CustomInput />
-                            </div>
-                            <div className='flex flex-row  items-center justify-center  m-2'>
-                                <span className='text-white w-52'> Add amount </span>
-                                <CustomInput />
-                            </div>
-                        </div>
-                        <div className='flex flex-col w-1/5'>
-                            <div className='flex flex-row  items-center justify-center  m-2'>
-                                <span className='text-white w-52'>  Total amount  </span>
-                                <CustomInput />
-                            </div>
-                            <div className='flex flex-row  items-center justify-center  m-2'>
-                                <span className='text-white w-52 mb-4 '> Total items</span>
-                                <CustomInput />
-                            </div>
-                            <div className='flex flex-row  items-center justify-center  m-2'>
-                                <span className='text-white w-52 mb-4 '>  Item disc</span>
-                                <CustomInput />
-                            </div>
-                        </div>
-                        <div className='flex flex-col w-1/5'>
-                            <div className='flex flex-row  items-center justify-center  m-2'>
-                                <span className='text-white w-52 mb-4 '>  Previous bal </span>
-                                <CustomInput />
-                            </div>
-                            <div className='flex flex-row  items-center justify-center  m-2'>
-                                <span className='text-white w-52 mb-4 '>  Paid amount </span>
-                                <CustomInput />
-                            </div>
-                            <div className='flex flex-row  items-center justify-center  m-2'>
-                                <span className='text-white w-52 mb-4 '>  Item disc</span>
-                                <CustomInput />
-                            </div>
-                        </div>
-                        <div className='flex flex-col w-1/5'>
-                            <div className='flex flex-row  items-center justify-center  m-2'>
-                                <span className='text-white w-52 '> Disc By% </span>
-                                <CustomInput />
-                            </div>
-                            <div className='flex flex-row  items-center justify-center  m-2'>
-                                <span className='text-white w-52 '> Disc By LS </span>
-                                <CustomInput />
-                            </div>
-                            <div className='flex flex-row  items-center justify-center  m-2'>
-                                <span className='text-white w-52 '> Balance </span>
-                                <CustomInput />
-                            </div>
-                        </div>
-                        <div className='flex flex-col w-1/5 justify-center items-center text-center'>
-                            <span className='text-white w-52  text-6xl font-bold'> 000</span>
-                            <span className='text-white w-52  text-3xl font-bold'> Items</span>
-                        </div>
-                    </div>
-                </footer>
+                    <HomeFooter/>  
+           
             </div>
         </>
     )

@@ -202,7 +202,7 @@ export default function Test() {
                                         </svg>
                                         <span className="text-sm  ml-2">Dashboard</span>
                                     </div>
-                                 </li>
+                                </li>
                                 <li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
                                     <div className="flex items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-puzzle" width={18} height={18} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -210,8 +210,8 @@ export default function Test() {
                                             <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" />
                                         </svg>
                                         <span className="text-sm  ml-2">Products</span>
-                                    </div> 
-                                     </li>
+                                    </div>
+                                </li>
                                 <li className="flex w-full justify-between text-gray-600 hover:text-gray-500 cursor-pointer items-center mb-6">
                                     <div className="flex items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-compass" width={18} height={18} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -265,14 +265,18 @@ export default function Test() {
                                 </li>
                             </ul>
                         </div>
-                      
+
                     </div>
                     {/* Sidebar ends */}
+
+
+
+
 
                     {/* Remove class [ h-64 ] when adding a card block */}
                     <div className="container mx-auto  md:w-4/5 px-3">
 
-
+                        {/* feild */}
                         <div className="flex md:flex-row flex-col items-center justify-cente py-4" style={{ fontFamily: '"Lato", sans-serif' }}>
 
                             <div className="flex flex-col md:mr-16">
@@ -308,32 +312,11 @@ export default function Test() {
 
 
 
-
+                        {/* table  */}
                         <div className="sm:px-6 w-full">
-                      
+
                             <div className="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
-                                <div className="sm:flex items-center justify-between">
-                                    <div className="flex items-center">
-                                        <a href="javascript:void(0)">
-                                            <div className="py-2 px-8 bg-indigo-100 text-indigo-700 rounded-full">
-                                                <p>All</p>
-                                            </div>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <div className="py-2 px-8 text-gray-600 hover:text-indigo-700 hover:bg-indigo-100 rounded-full ml-4 sm:ml-8">
-                                                <p>Done</p>
-                                            </div>
-                                        </a>
-                                        <a href="javascript:void(0)">
-                                            <div className="py-2 px-8 text-gray-600 hover:text-indigo-700 hover:bg-indigo-100 rounded-full ml-4 sm:ml-8">
-                                                <p>Pending</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <button onclick="popuphandler(true)" className="mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
-                                        <p className="text-sm font-medium leading-none text-white">Add Task</p>
-                                    </button>
-                                </div>
+
                                 <div className="mt-7 overflow-x-auto">
                                     <table className="w-full whitespace-nowrap">
                                         <tbody>

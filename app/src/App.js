@@ -31,8 +31,12 @@ import Test from './test';
 
 
 
-const CustomNav = ()=>{
-  <BrowserRouter>
+
+
+function App() {
+  return (
+   <> 
+   <BrowserRouter>
   <Routes>
     <Route path='/' element={<Login/>}/>    
     
@@ -68,12 +72,6 @@ const CustomNav = ()=>{
     </Route>
   </Routes>
 </BrowserRouter>
-}
-
-function App() {
-  return (
-   <> 
-     <Test/>
    </>
   )
 }

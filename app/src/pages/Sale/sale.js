@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Table from '../../components/table/table';
 import { secondary_color } from '../../utils/colors';
 import { FormItems } from '../../components/ui/formItem';
+import Footer from '../../components/footer/footer';
 
 
 
@@ -92,7 +93,7 @@ export default function Sale() {
 
                       </div>
                      
-                      <div className='flex w-full items-center justify-between mb-5'>
+                      <div className='flex w-full p-3'>
                         <div className='w-full'>
                           <Table th={th} tr={tr} />
                         </div>
@@ -106,9 +107,8 @@ export default function Sale() {
 
             </div>
 
-            <footer>
-              <div className='h-[2.3rem] w-full'></div>
-            </footer>
+            <Footer/>
+            
           </div>
         </div>
       </div>
