@@ -1,6 +1,5 @@
 
 import Table from '../../components/table/table';
-import { secondary_color } from '../../utils/colors';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import { PiExportBold } from 'react-icons/pi';
 import { HiPrinter } from 'react-icons/hi';
@@ -80,91 +79,63 @@ export default function AddSupplier() {
 
   return (
     <>
-      <div className='flex flex-row overflow-y-hidden'>
-        <div className='w-auto'>
-          <div className='flex flex-col'>
-            <div className='flex flex-row'>
-              <div className='w-screen flex flex-col h-[52rem] ' style={{ backgroundColor: secondary_color }}>
-                <div className='flex flex-col'>
 
 
-                  <div className='flex flex-row'>
+      <div className='flex flex-row justify-between'>
 
-                    <div className='flex flex-col  py-6 pr-6'>
+        <div className='p-2 flex '>
+          <h1 className='text-2xl font-bold p-6 '>Supplier</h1>
+        </div>
 
-                      <div className='flex flex-row justify-between'>
+        <div className='p-2 flex '>
+          <IconButton
+            title={'Add Supplier'}
+            Icon={AiOutlineUserAdd}
+            size={30}
+            w={28}
+            h={12}
+            direction={'row'}
+          />
 
-                        <div className='p-2 flex '>
-                          <h1 className='text-2xl font-bold p-6 '>Supplier</h1>
-                        </div>
+          <IconButton
+            title={'Export'}
+            Icon={PiExportBold}
+            size={30}
+            w={28}
+            h={12}
+            direction={'row'}
+          />
 
-                        <div className='p-2 flex '>
-                          <IconButton
-                            title={'Add Supplier'}
-                            Icon={AiOutlineUserAdd}
-                            size={30}
-                            w={28}
-                            h={12}
-                            direction={'row'}
-                          />
-
-                          <IconButton
-                            title={'Export'}
-                            Icon={PiExportBold}
-                            size={30}
-                            w={28}
-                            h={12}
-                            direction={'row'}
-                          />
-
-                          <IconButton
-                            title={'Print'}
-                            Icon={HiPrinter}
-                            size={30}
-                            w={28}
-                            h={12}
-                            direction={'row'}
-                          />
+          <IconButton
+            title={'Print'}
+            Icon={HiPrinter}
+            size={30}
+            w={28}
+            h={12}
+            direction={'row'}
+          />
 
 
-                        </div>
-                      </div>
-
-
-                      <div className='flex flex-row  py-6 p-4'>
-                        <div className='grid grid-cols-3 gap-2'>
-                          <FormItems
-                            form={formInitialValues}
-                            setForm={setFormValues}
-                            width={64}
-                           
-                          />
-                        </div>
-                      </div>
-
-                      <div className='flex w-full items-center justify-between mb-5'>
-                        <div className='w-screen'>
-                          <Table th={th} tr={tr} />
-                        </div>
-                      </div>
-                    </div>
-
-
-
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <footer>
-              <div className='h-[2.3rem] w-full'></div>
-            </footer>
-          </div>
         </div>
       </div>
 
+
+      <div className='flex flex-row  py-6 p-4'>
+        <div className='grid grid-cols-3 gap-2'>
+          <FormItems
+            form={formInitialValues}
+            setForm={setFormValues}
+            width={64}
+
+          />
+        </div>
+      </div>
+
+    
+        <div className='w-auto overflow-auto max-w-screen-2xl'>
+          <Table th={th} tr={tr} />
+        </div>
+    
 
     </>
 

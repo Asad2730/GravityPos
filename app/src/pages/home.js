@@ -4,14 +4,13 @@ import CustomInput from '../components/ui/input';
 import IconButton from '../components/ui/iconButton';
 import { AiOutlineDelete, AiOutlineEdit, AiOutlineReload, AiOutlinePauseCircle } from "react-icons/ai";
 import { CiCircleRemove } from "react-icons/ci";
-import {  secondary_color } from '../utils/colors';
 import { GiCancel } from "react-icons/gi";
 import { BsSendCheck } from "react-icons/bs";
 import CustomDropDown from '../components/ui/dropDown';
-import logo from '../assets/logo_normal.png';
+
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import HomeFooter from '../components/footer/homeFooter';
+
 
 
 
@@ -101,9 +100,9 @@ export default function Home() {
         <>
             <div className='flex flex-col'>
                 <div className='flex flex-row '>
-                    <div className=' h-[43rem] flex flex-col' style={{ backgroundColor: secondary_color }}>
+                    <div className=' h-[43rem] flex flex-col' >
                         <div className='flex flex-row justify-center items-center'>
-                            <img src={logo} className='w-60 h-16 ml-5' />
+                          
                             <div className='flex flex-col mr-10 ml-4'>
                                 <div className='flex flex-row my-2 space-x-2'>
                                     <h1>Bill No.</h1>
@@ -174,20 +173,20 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="p-1">
-                            <div className="w-full">
+                      
+                            <div className="w-auto overflow-auto max-w-screen-2xl p-6">
                                 <Table
                                     th={th}
                                     tr={tr}
                                 />
                             </div>
-                        </div>
+                       
 
                         
                     </div>
-                    <div  style={{ backgroundColor: secondary_color }}>
+                    <div>
                      
-                     <div className='grid grid-cols-2'>
+                     <div className='grid grid-cols-2 w-auto h-auto' >
                         {
                             iconBtns.map((i)=>(
                                 <div className='flex flex-wrap'>                             
@@ -210,7 +209,7 @@ export default function Home() {
                 
                 </div>
 
-                    <HomeFooter/>  
+                    
            
             </div>
         </>

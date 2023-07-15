@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Table from '../../components/table/table';
 import { secondary_color } from '../../utils/colors';
 import { FormItems } from '../../components/ui/formItem';
-import Footer from '../../components/footer/footer';
 
 
 
@@ -107,7 +106,7 @@ export default function Sale() {
 
             </div>
 
-            <Footer/>
+         
             
           </div>
         </div>

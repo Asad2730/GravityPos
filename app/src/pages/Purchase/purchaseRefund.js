@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import { secondary_color } from '../../utils/colors';
-import SideNav from '../../components/navbar/sideNavBar';
-import { purchase_navigation_items } from '../../components/navbar/navBarItems';
 import Table from '../../components/table/table';
 import { PiExportBold } from 'react-icons/pi';
 import { HiPrinter } from 'react-icons/hi';
@@ -77,7 +74,7 @@ export default function PurchaseRefund() {
     Total_Qty: { value: '', type: 'text', readonly: true },
     Item_Desc: { value: '', type: 'text', readonly: true },
     Item_GST: { value: '', type: 'text', readonly: true },
-    
+
     courier_AddaChanges: { value: '', type: 'text', readonly: true },
     FlatDisc: { value: '', type: 'text', readonly: true },
     FlatGst: { value: '', type: 'text', readonly: true },
@@ -87,129 +84,100 @@ export default function PurchaseRefund() {
 
   return (
     <>
-      <div className='flex flex-row'>
-        <div className='w-auto'>
-          <div className='flex flex-col'>
-            <div className='flex flex-row'>
-              <div className='w-screen flex flex-col h-full' style={{ backgroundColor: secondary_color }}>
-                <div className='flex flex-col justify-center items-center'>
-                  <div className='flex flex-row'>
-                    <div className='py-6 ' style={{ background: secondary_color }}>
-                      <SideNav navigation={purchase_navigation_items} />
-                    </div>
+         
+              <div className='flex flex-row justify-between'>
 
+                <div className='p-2 flex '>
+                  <h1 className='text-2xl font-bold p-6 '>PurchaseRefund</h1>
+                </div>
 
-                    <div className='flex flex-col  py-6 pr-6'>
+                <div className='p-2 flex '>
+                  <IconButton
+                    title={'Done'}
+                    Icon={MdFileDownloadDone}
+                    size={30}
+                    w={28}
+                    h={12}
+                    direction={'row'}
+                  />
 
-                      <div className='flex flex-row justify-between'>
+                  <IconButton
+                    title={'Export'}
+                    Icon={PiExportBold}
+                    size={30}
+                    w={28}
+                    h={12}
+                    direction={'row'}
+                  />
 
-                        <div className='p-2 flex '>
-                          <h1 className='text-2xl font-bold p-6 '>PurchaseRefund</h1>
-                        </div>
+                  <IconButton
+                    title={'Print'}
+                    Icon={HiPrinter}
+                    size={30}
+                    w={28}
+                    h={12}
+                    direction={'row'}
+                  />
 
-                        <div className='p-2 flex '>
-                          <IconButton
-                            title={'Done'}
-                            Icon={MdFileDownloadDone}
-                            size={30}
-                            w={28}
-                            h={12}
-                            direction={'row'}
-                          />
+                  <IconButton
+                    title={'Clear'}
+                    Icon={AiOutlineClear}
+                    size={30}
+                    w={28}
+                    h={12}
+                    direction={'row'}
+                  />
+                </div>
+              </div>
 
-                          <IconButton
-                            title={'Export'}
-                            Icon={PiExportBold}
-                            size={30}
-                            w={28}
-                            h={12}
-                            direction={'row'}
-                          />
+              <div className='flex flex-col ml-4 '>
 
-                          <IconButton
-                            title={'Print'}
-                            Icon={HiPrinter}
-                            size={30}
-                            w={28}
-                            h={12}
-                            direction={'row'}
-                          />
+                {/* section-1 */}
 
-                          <IconButton
-                            title={'Clear'}
-                            Icon={AiOutlineClear}
-                            size={30}
-                            w={28}
-                            h={12}
-                            direction={'row'}
-                          />
-                        </div>
-                      </div>
+                <div className='border-2  p-6 rounded-xl justify-center items-center ' >
+                  <div className='grid grid-cols-3 '>
+                    <FormItems
+                      form={formInitialValues}
+                      setForm={setFormValues}
+                      width={18}
 
-                      <div className='flex flex-col ml-4 '>
-
-                        {/* section-1 */}
-
-                        <div className='border-2  p-6 rounded-xl justify-center items-center ' >
-                          <div className='grid grid-cols-3 '>
-                            <FormItems
-                              form={formInitialValues}
-                              setForm={setFormValues}
-                              width={18}
-
-                            />
-                          </div>
-                        </div>
-
-
-                        {/* end of section-2 */}
-
-                        <div className="flex w-full h-full items-center justify-between mb-5">
-                          <div className="">
-                            <Table
-                              th={th}
-                              tr={tr}
-                            />
-
-                            {/* section-2 */}
-                            <div className='flex flex-row  py-6' >
-                              <div className='grid grid-cols-3 gap-1'>
-                                <FormItems
-                                  form={form2InitialValues}
-                                  setForm={setForm2Values}
-                                  width={18}
-                                />
-                              </div>
-                            </div>
-                         
-                            {/* end of section-2 */}
-
-                          </div>
-
-
-
-                        </div>
-
-                      </div>
-                    </div>
+                    />
                   </div>
+                </div>
+
+
+                {/* end of section-1*/}
+
+              
+                  <div className="w-auto overflow-auto max-w-screen-2xl p-1">
+                    <Table
+                      th={th}
+                      tr={tr}
+                    />
+
+                    {/* section-2 */}
+                    <div className='flex flex-row  py-6' >
+                      <div className='grid grid-cols-3 gap-1'>
+                        <FormItems
+                          form={form2InitialValues}
+                          setForm={setForm2Values}
+                          width={18}
+                        />
+                      </div>
+                    </div>
+
+                    {/* end of section-2 */}
+
+                  </div>
+
 
 
                 </div>
 
+             
+           
 
-              </div>
-
-
-            </div>
-
-
-            <footer>
-              <div className='h-[2.3rem] w-full'></div>
-            </footer>
-          </div>
-        </div>
-      </div>
+       
     </>
   )
 }

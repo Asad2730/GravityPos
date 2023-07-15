@@ -3,10 +3,10 @@ import {
   Navbar,
   Typography,
   IconButton,
-  Card,
 } from "@material-tailwind/react";
 import { Link, Outlet } from 'react-router-dom';
-import { primary_color } from "../../utils/colors";
+import { primary_color, secondary_color } from "../../utils/colors";
+
 
 
 const navigation = [
@@ -20,7 +20,7 @@ const navigation = [
   { name: "Logout", to: "/", current: false },
 ];
  
-export default function NavBar() {
+export default function NavBar({SideNav,Footer}) {
   const [openNav, setOpenNav] = React.useState(false);
  
   React.useEffect(() => {
@@ -49,6 +49,7 @@ export default function NavBar() {
  
   return (
     <>
+     <div className='flex flex-col' >
       <Navbar className="sticky top z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4" 
       style={{backgroundColor:primary_color}}>
         <div className="flex items-center justify-between text-blue-gray-900">
@@ -97,12 +98,14 @@ export default function NavBar() {
         </div>
       
       </Navbar>
-      <div className="mx-auto ">
- 
-            <Outlet/>
-       
-     
+      <div className="flex flex-row" style={{backgroundColor:secondary_color}} > 
+          {SideNav}
+        <div className="mx-auto" >
+          <Outlet/>
+        </div>
       </div>
+      {Footer}
+    </div>
     </>
   );
 }

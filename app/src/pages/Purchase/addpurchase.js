@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import { secondary_color } from '../../utils/colors';
-import SideNav from '../../components/navbar/sideNavBar';
-import { purchase_navigation_items } from '../../components/navbar/navBarItems';
 import { FormItems } from '../../components/ui/formItem';
 import Table from '../../components/table/table';
 
@@ -12,11 +9,11 @@ import Table from '../../components/table/table';
 
 const tr = [
   {
-    code: '4',  bonus: 'Member',
+    code: '4', bonus: 'Member',
     qty: '1', batch: '111', expiry: '07/06/2023',
   },
   {
-    code: '4',  bonus: 'Member',
+    code: '4', bonus: 'Member',
     qty: '1', batch: '111', expiry: '07/06/2023',
   },
   {
@@ -67,52 +64,22 @@ export default function AddPurchase() {
 
   return (
     <>
-      <div className='flex flex-row'>
-        <div className='w-auto'>
-          <div className='flex flex-col'>
-            <div className='flex flex-row'>
-              <div className='w-screen flex flex-col h-[52rem]' style={{ backgroundColor: secondary_color }}>
-                <div className='flex flex-col-2 '>
-                  <div className='py-6 h-screen' style={{ background: secondary_color }}>
-                    <SideNav navigation={purchase_navigation_items} />
-                  </div>
-
-                  <div className='flex flex-col'>
-                    <div className='flex flex-row px-6'>
-
-                      <div className='flex flex-row  py-6'>
-                        <div className='grid grid-cols-3 gap-2'>
-                          <FormItems
-                            form={formInitialValues}
-                            setForm={setFormValues}
-                            width={18}
-                           
-                          />
-                        </div>
-                      </div>
-                      
-                    </div>
-
-                    <div className='flex w-full items-center justify-between mb-5'>
-                        <div className='w-full'>
-                          <Table th={th} tr={tr} />
-                        </div>
-                      </div>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-
-            <footer>
-              <div className='h-[2.3rem] w-full'></div>
-            </footer>
+          
+          <div className='grid grid-cols-3 gap-2 px-6 py-6'>
+            <FormItems
+              form={formInitialValues}
+              setForm={setFormValues}
+              width={18}
+            />
           </div>
-        </div>
-      </div>
+      
 
-
+       
+          <div className='w-auto overflow-auto max-w-screen-2xl p-1'>
+            <Table th={th} tr={tr} />
+          </div>
+        
+      
     </>
 
   )

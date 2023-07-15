@@ -10,14 +10,13 @@ export default function SideNav({navigation}) {
   return (
     <div
       style={{ background: primary_color }}
-      className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 
-      bg-white px-6 w-64 h-full py-6 ">
+      className="w-auto h-auto py-6 ">
 
       <nav className="flex flex-1 flex-col">
         <ul role="list" className="flex flex-1 flex-col gap-y-7">
           <li>
             <ul role="list" className="-mx-2 space-y-1">
-             { navigation.map((item) => (
+             { navigation?.map((item) => (
                 <li key={item.name}>
                    <Link to={item.href}>
                     <a
@@ -41,3 +40,5 @@ export default function SideNav({navigation}) {
     </div>
   )
 }
+
+

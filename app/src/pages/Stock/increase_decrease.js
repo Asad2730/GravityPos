@@ -1,16 +1,5 @@
 
 import Table from '../../components/table/table';
-import CustomInput from '../../components/ui/input';
-import { secondary_color } from '../../utils/colors';
-import CustomDropDown from '../../components/ui/dropDown';
-import SideNav from '../../components/navbar/sideNavBar';
-import { stock_navigation_items } from '../../components/navbar/navBarItems';
-
-
-
-import IconButton from '../../components/ui/iconButton';
-
-import 'react-datepicker/dist/react-datepicker.css';
 import { useState } from 'react';
 import { FormItems } from '../../components/ui/formItem';
 
@@ -82,42 +71,20 @@ export default function Stock_Increase_Decrease() {
 
   return (
     <>
-      <div className='flex flex-col w-[100%]'>
-  
-          <div className='flex flex-col-2 h-[52rem] w-[100%] ' style={{ backgroundColor: secondary_color }}>
-            <div className='py-6 w-[20%]' style={{ background: secondary_color }}>
-              <SideNav navigation={stock_navigation_items} />
-            </div>
-            <div className='flex flex-col py-6  w-[80%]'>
-              <section className='flex flex-row justify-between'>
-                <div className=''>
-                  <h1 className='text-2xl font-bold p-6 '>Stock Increase Decrease</h1>
-                </div>
-              </section>
-              <section className='flex flex-col'>
-                <div className='grid grid-cols-3 gap-2'>
-                  <FormItems
-                    form={formInitialValues}
-                    setForm={setFormValues}
-                    width={18}
-                  />
-                </div>
-              </section>
-              <section >
-                <div >
-                  <Table th={th} tr={tr} />
-                </div>
-              </section>
-            </div>
-          </div>
-
-
-
-
-          <footer>
-            <div className='h-[2.3rem] w-full'></div>
-          </footer>
-  
+      <div className='flex flex-col py-6'>
+        <div className='flex flex-row justify-between'>
+          <h1 className='text-2xl font-bold p-6'>Stock Increase Decrease</h1>
+        </div>
+        <div className='grid grid-cols-3 gap-2 p-3'>
+          <FormItems
+            form={formInitialValues}
+            setForm={setFormValues}
+            width={18}
+          />
+        </div>
+        <div className='w-auto overflow-auto max-w-screen-2xl p-1'>
+          <Table th={th} tr={tr} />
+        </div>
       </div>
 
 

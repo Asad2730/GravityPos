@@ -14,7 +14,7 @@ export const FormItems = ({ form, setForm, width, ddlItems,style }) => {
     const dateStyle = `block w-${width} rounded-md border-2 
     border-gray-300 py-1.5 shadow-sm placeholder:text-gray-400 px-2 ml-2`;
 
-    const className = style === undefined?'flex flex-row mb-1 mr-5':style;
+    const className = style === undefined?'flex flex-row mb-1 w-auto':style;
 
     const [currentTime, setCurrentTime] = useState('');
     const [selectedDate, setSelectedDate] = useState(new Date());
@@ -72,7 +72,7 @@ export const FormItems = ({ form, setForm, width, ddlItems,style }) => {
                             onChange={setForm}
                             value={currentTime}
                             field={key}
-                            height={35}
+                           height={35}
                             width={width}
                             readOnly={false}
                         />
@@ -109,7 +109,7 @@ export const FormItems = ({ form, setForm, width, ddlItems,style }) => {
             {Object.entries(form).map(([key, item], index) => (
                 <div key={index}>
                     <div className={className}>           
-                        <h1 className='m-1 w-40'>{capitalizeFirstLetter(key)}</h1>
+                        <h1 className='m-1 w-36'>{capitalizeFirstLetter(key)}</h1>
                         {renderFormField(key, item)}
                     </div>
                 </div>

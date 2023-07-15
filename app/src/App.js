@@ -17,7 +17,6 @@ import BillPaymentReport from './pages/reports/sale/billpaymentreport';
 import SaleReturnReport from './pages/reports/sale/salereturnreport';
 import SoldItemReport from './pages/reports/sale/solditemreport';
 import PurchaseReport from './pages/reports/purchase/purchasereport';
-import PurchaseAdjustmentReport from './pages/reports/purchase/purchaseadjustmentreport';
 import PurchaseReturnReport from './pages/reports/purchase/purchasereturnreport';
 import StockReport from './pages/reports/stock/stockreport';
 import ProductReport from './pages/reports/stock/productreport';
@@ -27,30 +26,53 @@ import StockInHandReport from './pages/reports/stock/stockinhandreport';
 import ListOfVenderReport from './pages/reports/suppler/listofvenderreport';
 import NarcoticsDrugRreport from './pages/reports/sale/narcoticsdrugsreport';
 import NarcoticsAdjustmentReport from './pages/reports/purchase/purchaseadjustmentreport';
-import Test from './test';
+import HomeFooter from './components/footer/homeFooter';
+import Footer from './components/footer/footer';
+import HomeSideNav from './components/navbar/homeSideNav';
+import { purchase_navigation_items,stock_navigation_items } 
+from './components/navbar/navBarItems';
+import SideNav from './components/navbar/sideNavBar';
+import SideReportNav from './components/navbar/reportNavBar';
 
 
 
 
 
 function App() {
+  
+
+
   return (
    <> 
    <BrowserRouter>
   <Routes>
     <Route path='/' element={<Login/>}/>    
     
-    <Route element={<NavBar/>}>
+    <Route element={<NavBar Footer={<HomeFooter/>} SideNav={<HomeSideNav/>}/>}>
     <Route path='/home' element={<Home/>}/>
-    <Route path='/sale' element={ <Sale/>}/>   
+    </Route>
+
+
+    <Route element={<NavBar Footer={<Footer/>}/>}>
+    <Route path='/sale' element={ <Sale/>}/> 
+    <Route path='/addSupplier' element={<AddSupplier/>}/> 
+    </Route>
+
+    <Route element={<NavBar Footer={<Footer/>}
+     SideNav={<SideNav navigation={purchase_navigation_items}/>}/>}>  
     <Route path='/purchase' element={<AddPurchase/>}/>  
     <Route path='/PurchaseRefund' element={<PurchaseRefund/>}/>
     <Route path='/PurchaseAdjustment' element={<PurchaseAdjustment/>}/>
     <Route path='/purchaseOrder' element={<PurchaseOrder/>}/>
+   </Route>
+     
+   <Route element={<NavBar Footer={<Footer/>} SideNav={<SideNav navigation={stock_navigation_items}/>}/>}>
     <Route path='/addstock' element={<AddStock/>}/>  
     <Route path='/Stock_Increase_Decrease' element={<Stock_Increase_Decrease/>}/>
-    <Route path='/addSupplier' element={<AddSupplier/>}/>  
+   </Route>
 
+
+    <Route element={<NavBar Footer={<Footer/>} SideNav={<SideReportNav/>}/>}> 
     <Route path='/salesReport' element={<SalesReport/>}/>
     <Route path='/billReport' element={<BillPaymentReport/>}/>
     <Route path='/saleReturn' element={<SaleReturnReport/>}/>
