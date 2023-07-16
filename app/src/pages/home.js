@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Table from '../components/table/table';
-import CustomInput from '../components/ui/input';
 import IconButton from '../components/ui/iconButton';
 import { AiOutlineDelete, AiOutlineEdit, AiOutlineReload, AiOutlinePauseCircle } from "react-icons/ai";
 import { CiCircleRemove } from "react-icons/ci";
 import { GiCancel } from "react-icons/gi";
 import { BsSendCheck } from "react-icons/bs";
-import CustomDropDown from '../components/ui/dropDown';
-
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import { FormItems } from '../components/ui/formItem';
 
 
 
@@ -58,160 +54,75 @@ const items = [
 const iconSize = 40;
 
 const iconBtns = [
-    {name:'Clear Sale',icon:AiOutlineDelete,w:40,h:28},
-    {name:'Cancel item',icon:GiCancel,w:40,h:28},
-    {name:'Return',icon:AiOutlineReload,w:40,h:28},
-    {name:'Edit',icon:AiOutlineEdit,w:40,h:28},
-    {name:'Hold',icon:AiOutlinePauseCircle,w:40,h:28},
-    {name:'Cancellation',icon:CiCircleRemove,w:40,h:28},
-    {name:'Pay',icon:BsSendCheck,w:60,h:28},
+    { name: 'Clear Sale', icon: AiOutlineDelete, w: 40, h: 28 },
+    { name: 'Cancel item', icon: GiCancel, w: 40, h: 28 },
+    { name: 'Return', icon: AiOutlineReload, w: 40, h: 28 },
+    { name: 'Edit', icon: AiOutlineEdit, w: 40, h: 28 },
+    { name: 'Hold', icon: AiOutlinePauseCircle, w: 40, h: 28 },
+    { name: 'Cancellation', icon: CiCircleRemove, w: 40, h: 28 },
+    { name: 'Pay', icon: BsSendCheck, w: 60, h: 28 },
 ]
 
 export default function Home() {
 
-    const [currentTime, setCurrentTime] = useState('');
 
-    const [selectedDate, setSelectedDate] = useState(new Date());
-
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
-    };
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const time = new Date().toLocaleTimeString('en-US', {
-                timeZone: 'Asia/Karachi',
-                hour12: true,
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric'
-            });
-            setCurrentTime(time);
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, []);
+    const [formInitialValues, setFormValues] = useState({
+        Bill_No: { value: '', type: 'texts', readonly: true },
+        Date_Time: { value: '', type: 'date & time', readonly: true },
+        Client_Type: { value: '', type: 'ddl', readonly: true },
+        Client_Name: { value: '', type: 'text', readonly: true },
+        Code: { value: '', type: 'text', readonly: true },
+        Name: { value: '', type: 'text', readonly: true },
+        Bonus: { value: '', type: 'text', readonly: true },
+        Qty: { value: '', type: 'text', readonly: true },
+        Disc: { value: '', type: 'text', readonly: true },
+        Up: { value: '', type: 'text', readonly: true },
+        Check_Price: { value: '', type: 'checkbox', readonly: true },
+        Search_by_generic: { value: '', type: 'checkbox', readonly: true },
+    });
 
 
-
-    
 
     return (
         <>
-            <div className='flex flex-col'>
-                <div className='flex flex-row '>
-                    <div className=' h-[43rem] flex flex-col' >
-                        <div className='flex flex-row justify-center items-center'>
-                          
-                            <div className='flex flex-col mr-10 ml-4'>
-                                <div className='flex flex-row my-2 space-x-2'>
-                                    <h1>Bill No.</h1>
-                                    <CustomInput
-                                        height={35}
-                                    />
-                                    <CustomInput
-                                        height={35}
-                                    />
-                                    <h2 >Date & Time</h2>
-
-                                    <span className='block w-full rounded-md border-2 bg-white border-gray-300 py-1.5
-                                      shadow-sm placeholder:text-gray-400 px-2 ml-2' style={{ height: 35 }}>
-                                        <DatePicker selected={selectedDate} onChange={handleDateChange} />
-                                    </span>
-                                    <CustomInput
-                                        readOnly={false}
-                                        value={currentTime}
-                                        height={35}
-                                    />
-
-
-                                </div>
-                                <div className='flex flex-row '>
-                                    <span className='m-3 '>Client Type</span>
-                                    <CustomDropDown
-                                        placeHolder={'Cash'}
-                                        items={items}
-                                    />
-                                    <span className='m-3'>Client Name</span>
-                                    <CustomInput
-                                        height={35} />
-                                </div>
-                                <div className='flex flex-row mt-2'>
-                                    <span className='m-3'>Code</span>
-                                    <CustomInput
-                                        height={35} />
-
-                                    <span className='m-3'>Name</span>
-                                    <CustomInput
-                                        height={35} />
-
-                                    <span className='m-3'>Bonus</span>
-                                    <CustomInput
-                                        height={35} />
-                                    <span className='m-3'>Qty</span>
-                                    <CustomInput
-                                        height={35} />
-
-                                    <span className='m-3'>Disc%</span>
-                                    <CustomInput
-                                        height={35} />
-
-                                    <span className='m-3'>Up</span>
-                                    <CustomInput
-                                        height={35} />
-
-                                </div>
-                                <div className='flex flex-row mt-2'>
-                                    <CustomInput
-                                        height={35}
-                                    />
-                                    <CustomInput type={'checkbox'} />
-                                    <span className='ml-4 '>Check Price</span>
-                                    <span className='ml-4' />
-                                    <CustomInput type={'checkbox'} />
-                                    <span className='ml-4'>Search by generic</span>
-                                </div>
-                            </div>
-                        </div>
-                      
-                            <div className="w-auto overflow-auto max-w-screen-2xl p-6">
-                                <Table
-                                    th={th}
-                                    tr={tr}
-                                />
-                            </div>
-                       
-
-                        
+            <div className="flex">
+                <div className="w-3/4 ">
+                    <div className='grid grid-cols-2 gap-2 px-6 py-6'>
+                        <FormItems
+                            form={formInitialValues}
+                            setForm={setFormValues}
+                            ddlItems={items}
+                        />
                     </div>
-                    <div>
-                     
-                     <div className='grid grid-cols-2 w-auto h-auto' >
+                    <div className="w-auto overflow-auto max-w-screen-2xl p-6">
+                        <Table
+                            th={th}
+                            tr={tr}
+                        />
+                    </div>
+                </div>
+                <div className="w-1/4">
+                    <div className='grid grid-cols-2 w-auto h-auto' >
                         {
-                            iconBtns.map((i)=>(
-                                <div className='flex flex-wrap'>                             
-                                <IconButton
-                                Icon={i.icon}
-                                title={i.name}
-                                 size={iconSize}
-                                 w={i.w}
-                                 h={i.h}
-                                direction={'col'}                             
-                               />
+                            iconBtns.map((i) => (
+                                <div className='flex flex-wrap'>
+                                    <IconButton
+                                        Icon={i.icon}
+                                        title={i.name}
+                                        size={iconSize}
+                                        w={i.w}
+                                        h={i.h}
+                                        direction={'col'}
+                                    />
 
-                              </div>
+                                </div>
                             ))
                         }
-                     </div>                                              
-
-                 </div>
-                
-                
+                    </div>
                 </div>
-
-                    
-           
             </div>
+
+
         </>
     )
 }

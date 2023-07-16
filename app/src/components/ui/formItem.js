@@ -8,13 +8,14 @@ const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export const FormItems = ({ form, setForm, width, ddlItems,style }) => {
-    
-  
-    const dateStyle = `block w-${width} rounded-md border-2 
-    border-gray-300 py-1.5 shadow-sm placeholder:text-gray-400 px-2 ml-2`;
+export const FormItems = ({ form, setForm, ddlItems, style }) => {
 
-    const className = style === undefined?'flex flex-row mb-1 w-auto':style;
+
+    const dateStyle =`mt-1 block w-full py-2 px-3 border
+    border-gray-300 bg-white rounded-md shadow-sm focus:outline-none
+     focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`;
+
+    const className = style === undefined ? 'flex flex-row mb-1 w-auto' : style;
 
     const [currentTime, setCurrentTime] = useState('');
     const [selectedDate, setSelectedDate] = useState(new Date());
@@ -38,77 +39,82 @@ export const FormItems = ({ form, setForm, width, ddlItems,style }) => {
     }, []);
 
     const DateInput = () => (
-        <DatePicker selected={selectedDate} onChange={handleDateChange} 
-        className={dateStyle}/>
+        <DatePicker selected={selectedDate} onChange={handleDateChange}
+            className={dateStyle} />
     );
-    
+
 
     const dropDown = () => (
         <CustomDropDown items={ddlItems} />
     );
 
     const renderFormField = (key, item) => {
-        switch(item.type) {
+        switch (item.type) {
             case 'date':
-                return <DateInput/>;
+                return <DateInput />;
             case 'time':
                 return (
                     <CustomInput
                         onChange={setForm}
                         value={currentTime}
                         field={key}
-                        height={35}
-                        width={width}
                         readOnly={false}
                     />
+                );
+            case 'texts':
+                return (
+                    <>
+                        <CustomInput
+                            onChange={setForm}
+                            value={item.value}
+                            field={key}
+                            readOnly={item.readOnly}
+                            type={'text'}
+                        />
+                        <CustomInput
+                            onChange={setForm}
+                            value={item.value}
+                            field={key}
+                            readOnly={item.readOnly}
+                            type={'text'}
+                        />
+                    </>
                 );
             case 'ddl':
                 return dropDown();
             case 'date & time':
                 return (
                     <>
-                        <DateInput/>
+                        <DateInput />
                         <CustomInput
                             onChange={setForm}
                             value={currentTime}
                             field={key}
-                           height={35}
-                            width={width}
                             readOnly={false}
                         />
                     </>
                 );
-            // case 'checkbox':
-            //     return (
-            //         <CustomInput
-            //            type={'checkbox'}
-            //            onChange={setForm}
-            //            value={item.value}
-            //         />
-                  
-            //     );
+
             default:
                 return (
                     <CustomInput
                         onChange={setForm}
                         value={item.value}
                         field={key}
-                        height={35}
-                        width={width}
                         readOnly={item.readonly}
                         type={item.type}
                     />
                 );
         }
     };
-    
-    
+
+
 
     return (
         <>
             {Object.entries(form).map(([key, item], index) => (
-                <div key={index}>
-                    <div className={className}>           
+                <div key={index} className='w-auto'>
+                    <div className={className}>
                         <h1 className='m-1 w-36'>{capitalizeFirstLetter(key)}</h1>
                         {renderFormField(key, item)}
                     </div>

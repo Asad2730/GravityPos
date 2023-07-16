@@ -2,14 +2,8 @@ import React from 'react';
 
 import { handleChange } from "../../hooks/handleChange";
 
-export default function CustomInput({ placeholder, type, field, value, onChange, required, height ,readOnly,width}) {
-   
-  const wd = width ===undefined?'full':width;
-  
-  const checkbox = 'w-5 h-5 rounded-md border-2  border-gray-300 py-1.5 shadow-sm placeholder:text-gray-400 px-2 ml-2';
-  const defaultField = `block w-${wd} rounded-md border-2  border-gray-300 py-1.5 shadow-sm placeholder:text-gray-400 px-2 ml-2`
+export default function CustomInput({ placeholder, type, field, value, onChange, required, readOnly }) {
 
-  const isCheckBox = type === 'checkbox';
 
   const handleOnChange = (e) => {
     const { value } = e.target;
@@ -22,14 +16,16 @@ export default function CustomInput({ placeholder, type, field, value, onChange,
 
   return (
     <input
-      style={{height:height}}
       type={type}
       placeholder={placeholder}
       value={value}
       onChange={handleOnChange}
       required={required}
-      className={isCheckBox ? checkbox : defaultField}
+      className='mt-1 block w-full py-2 px-3 border
+       border-gray-300 bg-white rounded-md shadow-sm focus:outline-none
+        focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm '
       readOnly={readOnly}
     />
+
   );
 }

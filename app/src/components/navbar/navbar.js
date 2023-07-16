@@ -50,7 +50,7 @@ export default function NavBar({SideNav,Footer}) {
   return (
     <>
      <div className='flex flex-col' >
-      <Navbar className="sticky top z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4" 
+      <Navbar className="sticky top z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4  top-0" 
       style={{backgroundColor:primary_color}}>
         <div className="flex items-center justify-between text-blue-gray-900">
         
@@ -100,7 +100,7 @@ export default function NavBar({SideNav,Footer}) {
       </Navbar>
       <div className="flex flex-row" style={{backgroundColor:secondary_color}} > 
           {SideNav}
-        <div className="mx-auto" >
+           <div className="mx-auto" >
           <Outlet/>
         </div>
       </div>
