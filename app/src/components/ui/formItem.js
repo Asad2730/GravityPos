@@ -44,8 +44,8 @@ export const FormItems = ({ form, setForm, ddlItems, style }) => {
     );
 
 
-    const dropDown = () => (
-        <CustomDropDown items={ddlItems} />
+    const dropDown = (key) => (
+        <CustomDropDown items={ddlItems} placeHolder={key} />
     );
 
     const renderFormField = (key, item) => {
@@ -81,7 +81,7 @@ export const FormItems = ({ form, setForm, ddlItems, style }) => {
                     </>
                 );
             case 'ddl':
-                return dropDown();
+                return dropDown(item?.title);
             case 'date & time':
                 return (
                     <>

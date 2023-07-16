@@ -51,16 +51,16 @@ const items = [
     { name: 'easy pasa' },
 ]
 
-const iconSize = 40;
+
 
 const iconBtns = [
-    { name: 'Clear Sale', icon: AiOutlineDelete, w: 40, h: 28 },
-    { name: 'Cancel item', icon: GiCancel, w: 40, h: 28 },
-    { name: 'Return', icon: AiOutlineReload, w: 40, h: 28 },
-    { name: 'Edit', icon: AiOutlineEdit, w: 40, h: 28 },
-    { name: 'Hold', icon: AiOutlinePauseCircle, w: 40, h: 28 },
-    { name: 'Cancellation', icon: CiCircleRemove, w: 40, h: 28 },
-    { name: 'Pay', icon: BsSendCheck, w: 60, h: 28 },
+    { name: 'Clear Sale', icon: AiOutlineDelete,},
+    { name: 'Cancel item', icon: GiCancel,  },
+    { name: 'Return', icon: AiOutlineReload,  },
+    { name: 'Edit', icon: AiOutlineEdit,},
+    { name: 'Hold', icon: AiOutlinePauseCircle, },
+    { name: 'Cancellation', icon: CiCircleRemove, },
+    { name: 'Pay', icon: BsSendCheck, },
 ]
 
 export default function Home() {
@@ -69,7 +69,7 @@ export default function Home() {
     const [formInitialValues, setFormValues] = useState({
         Bill_No: { value: '', type: 'texts', readonly: true },
         Date_Time: { value: '', type: 'date & time', readonly: true },
-        Client_Type: { value: '', type: 'ddl', readonly: true },
+        Client_Type: { value: '', type: 'ddl', readonly: true ,title:'Select Type'},
         Client_Name: { value: '', type: 'text', readonly: true },
         Code: { value: '', type: 'text', readonly: true },
         Name: { value: '', type: 'text', readonly: true },
@@ -105,17 +105,15 @@ export default function Home() {
                     <div className='grid grid-cols-2 w-auto h-auto' >
                         {
                             iconBtns.map((i) => (
-                                <div className='flex flex-wrap'>
+                              
                                     <IconButton
                                         Icon={i.icon}
                                         title={i.name}
-                                        size={iconSize}
-                                        w={i.w}
-                                        h={i.h}
+                                        size={40}
                                         direction={'col'}
                                     />
 
-                                </div>
+                               
                             ))
                         }
                     </div>
