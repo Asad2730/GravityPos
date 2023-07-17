@@ -3,6 +3,7 @@ import CustomInput from './input';
 import CustomDropDown from './dropDown';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import CustomCheckBox from './customCheckBox';
 
 const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -93,6 +94,16 @@ export const FormItems = ({ form, setForm, ddlItems, style }) => {
                             readOnly={false}
                         />
                     </>
+                );
+             
+                case 'checkbox':return(
+                    <CustomCheckBox
+                     onChange={setForm}
+                     value={item.value}
+                     field={key}
+                     readOnly={item.readonly}
+                   
+                    />
                 );
 
             default:
