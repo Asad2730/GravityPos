@@ -34,8 +34,8 @@ export default function HomeFooter() {
                    
                 </li>
                 <li>
-                    <span className='text-white w-52  text-6xl font-bold'>000</span>
-                    <span className='text-white w-52  text-3xl font-bold'>Items</span>
+                    <span className='text-white text-6xl font-bold'>000</span>
+                    <span className='text-white text-3xl font-bold'>Items</span>
 
                 </li>
             </ul>
