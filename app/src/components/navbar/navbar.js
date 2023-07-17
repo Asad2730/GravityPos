@@ -98,10 +98,12 @@ export default function NavBar({SideNav,Footer}) {
         </div>
       
       </Navbar>
-      <div className="flex flex-row" style={{backgroundColor:secondary_color}} > 
-          {SideNav}
-           <div className="mx-auto" >
-          <Outlet/>
+      <div className="flex flex-row " style={{backgroundColor:secondary_color}} > 
+           <div className="w-2/12">
+             {SideNav}
+           </div>
+           <div >
+             <Outlet/>
         </div>
       </div>
       {Footer}

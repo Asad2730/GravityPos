@@ -22,7 +22,7 @@ export default function CustomReport({title,formValues,setFormValues,th,tr}) {
                     />
                 </div>
 
-                <div className='w-auto overflow-auto max-w-screen-2xl mt-9'>
+                <div className='w-auto overflow-auto max-w-screen-2xl mt-9 mx-3'>
                     <Table th={th} tr={tr} />
                 </div>
             </div>

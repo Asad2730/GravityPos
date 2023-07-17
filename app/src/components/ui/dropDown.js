@@ -4,12 +4,12 @@ export default function CustomDropDown({ placeHolder,items }) {
   items = items || [];
   
   return (
-    <div className="w-full bg-white">
-      <Select label={placeHolder}>
+      
+      <Select label={placeHolder} className="bg-white ">
         {items.length > 0 ? items.map((item, index) => (
           <Option key={index}>{item.name}</Option>
         )) : <Option>No options available</Option>}
       </Select>
-    </div>
+     
   );
 }

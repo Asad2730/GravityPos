@@ -45,7 +45,7 @@ function App() {
   return (
    <> 
    <BrowserRouter>
-  <Routes>
+    <Routes>
     <Route path='/' element={<Login/>}/>    
     
     <Route element={<NavBar Footer={<HomeFooter/>} SideNav={<HomeSideNav/>}/>}>

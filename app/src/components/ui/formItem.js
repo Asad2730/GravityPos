@@ -12,7 +12,7 @@ const capitalizeFirstLetter = (string) => {
 export const FormItems = ({ form, setForm, ddlItems, style }) => {
 
 
-    const dateStyle =`mt-1 block w-full py-2 px-3 border
+    const dateStyle = `mt-1 block w-full py-2 px-3 border
     border-gray-300 bg-white rounded-md shadow-sm focus:outline-none
      focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`;
 
@@ -65,20 +65,24 @@ export const FormItems = ({ form, setForm, ddlItems, style }) => {
             case 'texts':
                 return (
                     <>
-                        <CustomInput
-                            onChange={setForm}
-                            value={item.value}
-                            field={key}
-                            readOnly={item.readOnly}
-                            type={'text'}
-                        />
-                        <CustomInput
-                            onChange={setForm}
-                            value={item.value}
-                            field={key}
-                            readOnly={item.readOnly}
-                            type={'text'}
-                        />
+                        <div className='flex'>
+                            <div className='flex-1 mr-1'>
+                                <CustomInput
+                                    onChange={setForm}
+                                    value={item.value}
+                                    field={key}
+                                    readOnly={item.readOnly}
+                                    type={'text'} /> </div>
+                            <div className='flex-1'>
+                                <CustomInput
+                                    onChange={setForm}
+                                    value={item.value}
+                                    field={key}
+                                    readOnly={item.readOnly}
+                                    type={'text'}
+                                />
+                            </div>
+                        </div>
                     </>
                 );
             case 'ddl':
@@ -86,25 +90,31 @@ export const FormItems = ({ form, setForm, ddlItems, style }) => {
             case 'date & time':
                 return (
                     <>
-                        <DateInput />
-                        <CustomInput
-                            onChange={setForm}
-                            value={currentTime}
-                            field={key}
-                            readOnly={false}
-                        />
+                        <div className='flex'>
+                            <div className='flex-1 mr-1'>
+                                <DateInput />
+                            </div>
+                            <div className='flex-1'>
+                                 <CustomInput
+                                onChange={setForm}
+                                value={currentTime}
+                                field={key}
+                                readOnly={false}
+                            />
+                            </div>
+                        </div>
                     </>
                 );
-             
-                case 'checkbox':return(
-                    <CustomCheckBox
-                     onChange={setForm}
-                     value={item.value}
-                     field={key}
-                     readOnly={item.readonly}
-                   
-                    />
-                );
+
+            case 'checkbox': return (
+                <CustomCheckBox
+                    onChange={setForm}
+                    value={item.value}
+                    field={key}
+                    readOnly={item.readonly}
+
+                />
+            );
 
             default:
                 return (
@@ -124,10 +134,15 @@ export const FormItems = ({ form, setForm, ddlItems, style }) => {
     return (
         <>
             {Object.entries(form).map(([key, item], index) => (
-                <div key={index} className='w-auto'>
+                <div key={index}>
                     <div className={className}>
-                        <h1 className='m-1 w-36'>{capitalizeFirstLetter(key)}</h1>
-                        {renderFormField(key, item)}
+                        <div className=' flex-1'>
+                            <h1 className='m-1'>{capitalizeFirstLetter(key)}</h1>
+                        </div>
+                        <div className='flex-1'>
+                            {renderFormField(key, item)}
+                        </div>
+
                     </div>
                 </div>
             ))}

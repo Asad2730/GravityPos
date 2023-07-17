@@ -10,7 +10,7 @@ export default function SideNav({navigation}) {
   return (
     <div
       style={{ background: primary_color }}
-      className="w-auto h-auto py-6 p-2 ">
+      className="w-auto h-screen py-6 p-2 ">
 
       <nav className="flex flex-1 flex-col">
         <ul role="list" className="flex flex-1 flex-col gap-y-7">
