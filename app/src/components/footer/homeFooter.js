@@ -20,12 +20,12 @@ export default function HomeFooter() {
 
 
     return (
-        <footer className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t
+        <footer className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t
          border-blue-gray-50 py-6 text-center md:justify-between " style={{backgroundColor:primary_color}}>
             <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
                 <li>
                   
-                        <div className='grid grid-cols-3  ml-4 gap-3'>
+                        <div className='grid grid-cols-4  ml-4 gap-3'>
                             <FormItems
                                 form={formValues}
                                 setForm={setFormValues}
@@ -34,9 +34,9 @@ export default function HomeFooter() {
                    
                 </li>
                 <li>
-                    <span className='text-white w-52  text-6xl font-bold'> 000</span>
-                    <span className='text-white w-52  text-3xl font-bold'> Items</span>
-                 
+                    <span className='text-white w-52  text-6xl font-bold'>000</span>
+                    <span className='text-white w-52  text-3xl font-bold'>Items</span>
+
                 </li>
             </ul>
         </footer>
