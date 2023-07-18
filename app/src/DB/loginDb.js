@@ -1,13 +1,20 @@
-import db from './connect'
+// import { ipcRenderer } from 'electron-react-ipc';
+import { ipcRenderer } from 'electron';
 
 
-export const login = async (name,password)=>{
-    try{
-     const user = await db.users.where({name,password}).first();
-     return user;
-    }catch(ex){
-        return ex;
-    }
-}
+export const login = (name, password) => {
 
+  return new Promise((resolve, reject) => {
+    ipcRenderer.once('login-response', (event, response) => {
+      ipcRenderer.removeAllListeners('login-response');
+      console.log('okkkk',response)
+      if (response.error) {
+        reject(new Error(response.error));
+      } else {
+        resolve(response);
+      }
+    });
 
+    ipcRenderer.send('login-request', { name, password });
+  });
+};
