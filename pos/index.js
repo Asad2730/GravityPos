@@ -1,7 +1,10 @@
 'use strict';
 const { app, BrowserWindow } = require('electron')
-
 const {loginEvent} = require('./events/userEvents')
+const path = require('path');
+
+
+
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -12,11 +15,13 @@ const createWindow = () => {
       }
     })
 
-    // win.loadFile('')
-    win.loadURL('http://localhost:3000/')
+     
+  win.loadFile(path.join(__dirname, './build/index.html'));
+  //  win.loadURL('http://localhost:3000/')
+  win.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {
     createWindow(); 
-    loginEvent();
+   // loginEvent();
   })
